@@ -11,7 +11,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RestaurantServices {
     private final RestaurantRepository restaurantRepository;
-    //Lista basica inicializada
+
+    //Utiliza el metodo de busqueda del repositorio
     public List<Restaurant> getAllRestaurants() {
         return restaurantRepository.findAll();
     }

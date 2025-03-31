@@ -16,7 +16,7 @@ public class PromotionService {
     public List<Promotion> getAllPromotions() {
         return promotionRepository.findAll();
     }
-    public List<Promotion> getActivePromotions(LocalDate currentDate) {
-        return promotionRepository.findByStartDateBeforeAndEndDateAfter(currentDate, currentDate);
+    public List<Promotion> getActivePromotions(LocalDate currentDate1, LocalDate currentDate2) {
+        return promotionRepository.findByStartDateBeforeAndEndDateAfter(currentDate1, currentDate2);
     }
 }

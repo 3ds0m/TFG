@@ -1,11 +1,18 @@
 package com.edson.gonzales.aff.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "restaurantes")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Restaurant{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

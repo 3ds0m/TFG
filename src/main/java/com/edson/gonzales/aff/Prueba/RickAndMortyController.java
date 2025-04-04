@@ -1,6 +1,5 @@
-package com.edson.gonzales.aff.Controller.Prueba;
+package com.edson.gonzales.aff.Prueba;
 
-import com.edson.gonzales.aff.Service.Prueba.RickandMortyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

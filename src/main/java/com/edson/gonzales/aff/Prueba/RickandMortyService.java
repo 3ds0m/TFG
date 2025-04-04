@@ -1,6 +1,5 @@
-package com.edson.gonzales.aff.Service.Prueba;
+package com.edson.gonzales.aff.Prueba;
 
-import com.edson.gonzales.aff.Entity.Prueba.CharacterInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

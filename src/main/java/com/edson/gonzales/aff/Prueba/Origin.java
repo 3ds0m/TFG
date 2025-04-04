@@ -1,4 +1,4 @@
-package com.edson.gonzales.aff.Entity.Prueba;
+package com.edson.gonzales.aff.Prueba;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

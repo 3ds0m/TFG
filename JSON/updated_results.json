@@ -11,7 +11,9 @@
   "bearing" : "northeast",
   "name" : "Cervecería El Caño",
   "location_id" : "16807647",
+  "rating" : "4.9",
   "price_level" : "$",
+  "cuisine_types" : "Spanish, Venezuelan",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/24/51/81/85/cerveceria-el-cano.jpg"
 }, {
   "address_obj" : {
@@ -26,7 +28,9 @@
   "bearing" : "north",
   "name" : "Restaurante Hnos Míguez",
   "location_id" : "19059773",
+  "rating" : "4.9",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/2e/fc/e2/91/caption.jpg"
 }, {
   "address_obj" : {
@@ -41,7 +45,9 @@
   "bearing" : "northeast",
   "name" : "La Sanabresa",
   "location_id" : "1507751",
+  "rating" : "4.3",
   "price_level" : "$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/2f/84/d7/55/caption.jpg"
 }, {
   "address_obj" : {
@@ -56,7 +62,9 @@
   "bearing" : "northwest",
   "name" : "Novecento",
   "location_id" : "5444938",
+  "rating" : "4.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Italian, Pizza, Argentinean, South American",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/08/ea/4a/90/novecento.jpg"
 }, {
   "address_obj" : {
@@ -71,7 +79,9 @@
   "bearing" : "northeast",
   "name" : "El Fogón de Usera",
   "location_id" : "3161670",
+  "rating" : "4.2",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mexican, Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0a/da/68/eb/img-20160409-wa0012-largejpg.jpg"
 }, {
   "address_obj" : {
@@ -86,7 +96,9 @@
   "bearing" : "northeast",
   "name" : "Restaurante Cangas",
   "location_id" : "1096385",
+  "rating" : "4.1",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Seafood, Mediterranean, Spanish",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -101,7 +113,9 @@
   "bearing" : "southwest",
   "name" : "Bar Casa Marisa",
   "location_id" : "11895699",
+  "rating" : "4.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish, Gastropub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/10/8a/f4/d2/photo0jpg.jpg"
 }, {
   "address_obj" : {
@@ -116,7 +130,9 @@
   "bearing" : "northeast",
   "name" : "Restaurante Badila",
   "location_id" : "857918",
+  "rating" : "3.8",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0d/7c/6c/a3/photo2jpg.jpg"
 }, {
   "address_obj" : {
@@ -131,7 +147,9 @@
   "bearing" : "northwest",
   "name" : "Lavinia 57",
   "location_id" : "7820421",
+  "rating" : "3.8",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/a5/66/0d/lavinia-57.jpg"
 }, {
   "address_obj" : {
@@ -146,7 +164,9 @@
   "bearing" : "northwest",
   "name" : "Eiffel Restaurante",
   "location_id" : "991522",
+  "rating" : "4.7",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/11/bf/a2/58/carnes-de-calidad.jpg"
 }, {
   "address_obj" : {
@@ -161,7 +181,9 @@
   "bearing" : "northeast",
   "name" : "Del Diego Cocktail Bar",
   "location_id" : "12131137",
+  "rating" : "4.4",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/03/fc/b4/33/del-diego.jpg"
 }, {
   "address_obj" : {
@@ -176,7 +198,9 @@
   "bearing" : "northeast",
   "name" : "Salmon Guru",
   "location_id" : "10731641",
+  "rating" : "4.6",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Bar",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/2f/74/54/7b/caption.jpg"
 }, {
   "address_obj" : {
@@ -191,7 +215,9 @@
   "bearing" : "northeast",
   "name" : "1862 Dry Bar",
   "location_id" : "4371676",
+  "rating" : "4.4",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/04/0d/ce/36/getlstd-property-photo.jpg"
 }, {
   "address_obj" : {
@@ -206,7 +232,9 @@
   "bearing" : "northeast",
   "name" : "Baton Rouge",
   "location_id" : "12399551",
+  "rating" : "4.6",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "International, Street Food",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/b4/ac/48/barra-baton-rouge.jpg"
 }, {
   "address_obj" : {
@@ -221,7 +249,9 @@
   "bearing" : "northeast",
   "name" : "Santamaría La Coctelería de al lado",
   "location_id" : "12215854",
+  "rating" : "4.8",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/de/27/e1/perfect-service.jpg"
 }, {
   "address_obj" : {
@@ -236,7 +266,9 @@
   "bearing" : "northeast",
   "name" : "Only YOU Hotel Atocha",
   "location_id" : "9998605",
+  "rating" : "4.8",
   "price_level" : "$$$",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/ad/f6/4d/junior-suite.jpg"
 }, {
   "address_obj" : {
@@ -251,7 +283,9 @@
   "bearing" : "northeast",
   "name" : "Cocktail Bar 47",
   "location_id" : "7303776",
+  "rating" : "4.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Bar, Pub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/08/a0/13/47cocktail-bar.jpg"
 }, {
   "address_obj" : {
@@ -266,7 +300,9 @@
   "bearing" : "northeast",
   "name" : "Enbabia Bar",
   "location_id" : "12960913",
+  "rating" : "4.8",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/11/87/3d/60/ven-y-conoce-los-secretos.jpg"
 }, {
   "address_obj" : {
@@ -281,7 +317,9 @@
   "bearing" : "northeast",
   "name" : "Bad Company 1920",
   "location_id" : "21505159",
+  "rating" : "4.8",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/1c/62/f5/8f/te-gustan-los-ahumados.jpg"
 }, {
   "address_obj" : {
@@ -296,7 +334,9 @@
   "bearing" : "northeast",
   "name" : "Angelita Madrid",
   "location_id" : "10159455",
+  "rating" : "4.6",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "International, Mediterranean, European, Spanish, Fusion, Wine Bar",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0b/09/13/4b/bar-americano.jpg"
 }, {
   "address_obj" : {
@@ -311,23 +351,10 @@
   "bearing" : "north",
   "name" : "Matilda",
   "location_id" : "6404685",
+  "rating" : "4.6",
   "price_level" : "$",
+  "cuisine_types" : "Cafe, Mediterranean, European, Spanish, Healthy",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/06/d2/58/1b/fachada-matilda-cafe.jpg"
-}, {
-  "address_obj" : {
-    "country" : "España",
-    "address_string" : "Calle del Dr. Drumen, 4, 28012 Madrid España",
-    "city" : "Madrid",
-    "postalcode" : "28012",
-    "street1" : "Calle del Dr. Drumen, 4",
-    "street2" : ""
-  },
-  "distance" : "1.2512304266949947",
-  "bearing" : "north",
-  "name" : "SLEEP'N Atocha",
-  "location_id" : "1475454",
-  "price_level" : "$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/28/12/4d/57/sleep-n-atocha.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -341,8 +368,27 @@
   "bearing" : "north",
   "name" : "La Pitarra",
   "location_id" : "5796060",
+  "rating" : "4.2",
   "price_level" : "$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/1c/7b/e9/primero.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle del Dr. Drumen, 4, 28012 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28012",
+    "street1" : "Calle del Dr. Drumen, 4",
+    "street2" : ""
+  },
+  "distance" : "1.2512304266949947",
+  "bearing" : "north",
+  "name" : "SLEEP'N Atocha",
+  "location_id" : "1475454",
+  "rating" : "4.8",
+  "price_level" : "$$",
+  "cuisine_types" : "",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/28/12/4d/57/sleep-n-atocha.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -356,7 +402,9 @@
   "bearing" : "north",
   "name" : "La Puebla",
   "location_id" : "3326013",
+  "rating" : "4.4",
   "price_level" : "$",
+  "cuisine_types" : "Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/2f/5a/ec/95/caption.jpg"
 }, {
   "address_obj" : {
@@ -371,7 +419,9 @@
   "bearing" : "north",
   "name" : "Restaurante Puerto Rico",
   "location_id" : "1858709",
+  "rating" : "4.2",
   "price_level" : "$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/24/22/da/93/carta.jpg"
 }, {
   "address_obj" : {
@@ -386,8 +436,10 @@
   "bearing" : "north",
   "name" : "El Bierzo",
   "location_id" : "991471",
+  "rating" : "4.1",
   "price_level" : "$$ - $$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/2c/24/2d/caption.jpg"
+  "cuisine_types" : "Mediterranean, Spanish",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/2f/88/e1/9a/caption.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -401,23 +453,27 @@
   "bearing" : "northwest",
   "name" : "Los Chuchis Bar",
   "location_id" : "3736683",
+  "rating" : "4.4",
   "price_level" : "$",
-  "image" : "N/A"
+  "cuisine_types" : "Mediterranean, European, British",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0f/70/ac/bc/guiso-de-pescado-menu.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
-    "address_string" : "Calle De Echegaray, 20, 28014 Madrid España",
+    "address_string" : "Calle de San Bartolomè 4, 28004 Madrid España",
     "city" : "Madrid",
-    "postalcode" : "28014",
-    "street1" : "Calle De Echegaray, 20",
+    "postalcode" : "28004",
+    "street1" : "Calle de San Bartolomè 4",
     "street2" : ""
   },
-  "distance" : "1.719631538886346",
+  "distance" : "2.134644703853277",
   "bearing" : "north",
-  "name" : "Lovo Bar",
-  "location_id" : "23822109",
-  "price_level" : "N/A",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/22/df/7e/12/logo.jpg"
+  "name" : "Entre Santos Cocktail Bar & Food",
+  "location_id" : "14062978",
+  "rating" : "4.8",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Bar, Mediterranean, European, Spanish, Contemporary, Fusion, Healthy",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-w/1c/6c/15/43/chicken-mohammad-con.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -431,7 +487,9 @@
   "bearing" : "north",
   "name" : "Bar Restaurante Asturias",
   "location_id" : "8091057",
+  "rating" : "4.0",
   "price_level" : "$",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0a/47/7a/4c/20160210-143329-largejpg.jpg"
 }, {
   "address_obj" : {
@@ -446,8 +504,10 @@
   "bearing" : "northwest",
   "name" : "Bar La Campana",
   "location_id" : "2086925",
+  "rating" : "4.3",
   "price_level" : "$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/2f/85/04/0c/caption.jpg"
+  "cuisine_types" : "Brew Pub, Fast Food, Spanish",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-w/2f/8a/1f/e7/caption.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -461,7 +521,9 @@
   "bearing" : "northwest",
   "name" : "La Latina",
   "location_id" : "589307",
+  "rating" : "4.4",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/01/44/45/1a/la-latina.jpg"
 }, {
   "address_obj" : {
@@ -476,7 +538,9 @@
   "bearing" : "northwest",
   "name" : "Bar Melo's Lavapiés",
   "location_id" : "4736332",
+  "rating" : "4.3",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/9f/15/aa/nuestro-logo.jpg"
 }, {
   "address_obj" : {
@@ -491,7 +555,9 @@
   "bearing" : "northwest",
   "name" : "Bar Cruz",
   "location_id" : "4545096",
+  "rating" : "3.7",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/05/39/ad/bb/bar-cruz.jpg"
 }, {
   "address_obj" : {
@@ -506,23 +572,10 @@
   "bearing" : "north",
   "name" : "Inclán Brutal Bar",
   "location_id" : "10358028",
+  "rating" : "4.7",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Bar, Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/93/b7/98/bar-brutal.jpg"
-}, {
-  "address_obj" : {
-    "country" : "España",
-    "address_string" : "Calle de San Bartolomè 4, 28004 Madrid España",
-    "city" : "Madrid",
-    "postalcode" : "28004",
-    "street1" : "Calle de San Bartolomè 4",
-    "street2" : ""
-  },
-  "distance" : "2.134644703853277",
-  "bearing" : "north",
-  "name" : "Entre Santos Cocktail Bar & Food",
-  "location_id" : "14062978",
-  "price_level" : "$$ - $$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-w/1c/6c/15/43/chicken-mohammad-con.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -535,7 +588,9 @@
   "bearing" : "north",
   "name" : "Plaza De Santa Ana",
   "location_id" : "190148",
+  "rating" : "4.3",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/02/59/07/90/filename-foto2476-jpg.jpg"
 }, {
   "address_obj" : {
@@ -550,7 +605,9 @@
   "bearing" : "north",
   "name" : "Toni 2 Piano Bar",
   "location_id" : "5315937",
+  "rating" : "3.8",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/0c/54/34/un-sabado-cualquiera.jpg"
 }, {
   "address_obj" : {
@@ -565,7 +622,9 @@
   "bearing" : "northwest",
   "name" : "Cava Baja Gallery",
   "location_id" : "313698",
+  "rating" : "4.4",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/60/8f/9b/cava-baja-gallery-cava.jpg"
 }, {
   "address_obj" : {
@@ -580,23 +639,10 @@
   "bearing" : "northwest",
   "name" : "Restaurante Botín",
   "location_id" : "1094538",
+  "rating" : "4.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, European, Spanish, Soups",
   "image" : "N/A"
-}, {
-  "address_obj" : {
-    "country" : "España",
-    "address_string" : "Calle Atocha 57, 28012 Madrid España",
-    "city" : "Madrid",
-    "postalcode" : "28012",
-    "street1" : "Calle Atocha 57",
-    "street2" : ""
-  },
-  "distance" : "1.576039647709352",
-  "bearing" : "north",
-  "name" : "Ferretería Restaurante",
-  "location_id" : "15210699",
-  "price_level" : "$$ - $$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/19/ee/f6/dc/nuestro-gastro-bar-se.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -610,8 +656,27 @@
   "bearing" : "north",
   "name" : "Tabernas El Sur",
   "location_id" : "2527526",
+  "rating" : "4.7",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Bar, Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/08/8b/56/3e/taberna-el-sur.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle Atocha 57, 28012 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28012",
+    "street1" : "Calle Atocha 57",
+    "street2" : ""
+  },
+  "distance" : "1.576039647709352",
+  "bearing" : "north",
+  "name" : "Ferretería Restaurante",
+  "location_id" : "15210699",
+  "rating" : "4.4",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Bar, Mediterranean, Spanish",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/19/ee/f6/dc/nuestro-gastro-bar-se.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -625,23 +690,10 @@
   "bearing" : "northwest",
   "name" : "Restaurante Casa Lucio",
   "location_id" : "697479",
+  "rating" : "3.9",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, European, Spanish",
   "image" : "N/A"
-}, {
-  "address_obj" : {
-    "country" : "España",
-    "address_string" : "Ronda Atocha 17, 28012 Madrid España",
-    "city" : "Madrid",
-    "postalcode" : "28012",
-    "street1" : "Ronda Atocha 17",
-    "street2" : ""
-  },
-  "distance" : "1.0974562899412639",
-  "bearing" : "north",
-  "name" : "Sessions Restaurant",
-  "location_id" : "23462922",
-  "price_level" : "$$ - $$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/2f/70/0c/e1/descubre-nuestra-nueva.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -655,8 +707,27 @@
   "bearing" : "north",
   "name" : "Restaurante Amazonico",
   "location_id" : "10486110",
+  "rating" : "3.8",
   "price_level" : "$$$$",
+  "cuisine_types" : "Japanese Fusion",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/7f/bf/cd/restaurante-amazonico.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Ronda Atocha 17, 28012 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28012",
+    "street1" : "Ronda Atocha 17",
+    "street2" : ""
+  },
+  "distance" : "1.0974562899412639",
+  "bearing" : "north",
+  "name" : "Sessions Restaurant",
+  "location_id" : "23462922",
+  "rating" : "4.6",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/2f/70/0c/e1/descubre-nuestra-nueva.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -670,38 +741,10 @@
   "bearing" : "north",
   "name" : "Paco Roncero Restaurante",
   "location_id" : "804175",
+  "rating" : "4.4",
   "price_level" : "$$$$",
+  "cuisine_types" : "Mediterranean, European, Spanish, Contemporary",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/e0/49/bd/paco-roncero-restaurante.jpg"
-}, {
-  "address_obj" : {
-    "country" : "España",
-    "address_string" : "Calle Montalban 9, 28014 Madrid España",
-    "city" : "Madrid",
-    "postalcode" : "28014",
-    "street1" : "Calle Montalban 9",
-    "street2" : ""
-  },
-  "distance" : "1.8724433478473512",
-  "bearing" : "north",
-  "name" : "Restaurante Alabaster",
-  "location_id" : "6161596",
-  "price_level" : "$$$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/05/66/01/2a/restaurante-alabaster.jpg"
-}, {
-  "address_obj" : {
-    "country" : "España",
-    "address_string" : "Calle Olvido 92 Corner with C/ Julio Merino, 28026 Madrid España",
-    "city" : "Madrid",
-    "postalcode" : "28026",
-    "street1" : "Calle Olvido 92",
-    "street2" : "Corner with C/ Julio Merino"
-  },
-  "distance" : "0.8305135926649453",
-  "bearing" : "southwest",
-  "name" : "Royal Cantonés",
-  "location_id" : "2024342",
-  "price_level" : "$$ - $$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/03/af/6e/00/royal-cantones.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -715,8 +758,44 @@
   "bearing" : "north",
   "name" : "Bodega de los Secretos",
   "location_id" : "5966584",
+  "rating" : "4.3",
   "price_level" : "$$$$",
+  "cuisine_types" : "International, Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/50/e2/3c/acceso-a-galeria.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle del Almendro 9, 28005 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28005",
+    "street1" : "Calle del Almendro 9",
+    "street2" : ""
+  },
+  "distance" : "1.7969414218213928",
+  "bearing" : "northwest",
+  "name" : "Ástor",
+  "location_id" : "11896546",
+  "rating" : "4.8",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "International, Mediterranean, European, Spanish, Fusion, Healthy",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0d/fb/81/4b/astor-gastro-place.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle Santa Isabel 35, 28012 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28012",
+    "street1" : "Calle Santa Isabel 35",
+    "street2" : ""
+  },
+  "distance" : "1.3522043699208812",
+  "bearing" : "north",
+  "name" : "Taberna Más Al Sur",
+  "location_id" : "8396325",
+  "rating" : "4.7",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, European, Spanish, Healthy",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-w/2f/89/9d/4b/caption.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -730,7 +809,9 @@
   "bearing" : "northwest",
   "name" : "Chocolatería San Ginés",
   "location_id" : "1027419",
+  "rating" : "4.2",
   "price_level" : "$",
+  "cuisine_types" : "Cafe, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/12/b4/ea/95/chocolate-con-churros.jpg"
 }, {
   "address_obj" : {
@@ -745,7 +826,9 @@
   "bearing" : "northwest",
   "name" : "1902 Churreria Chocolateria",
   "location_id" : "4065636",
+  "rating" : "4.1",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Cafe, Spanish, Street Food",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0d/8c/63/9a/main.jpg"
 }, {
   "address_obj" : {
@@ -760,7 +843,9 @@
   "bearing" : "northwest",
   "name" : "Chocolaterias Valor",
   "location_id" : "1164044",
+  "rating" : "2.8",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Cafe, Spanish",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -775,7 +860,9 @@
   "bearing" : "northwest",
   "name" : "Chocolateria Valor",
   "location_id" : "2588010",
+  "rating" : "2.7",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Cafe, Spanish",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -790,7 +877,9 @@
   "bearing" : "north",
   "name" : "Chocolat Madrid",
   "location_id" : "1788549",
+  "rating" : "4.3",
   "price_level" : "$$$$",
+  "cuisine_types" : "Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/08/1a/fc/16/chocolate-con-churros.jpg"
 }, {
   "address_obj" : {
@@ -805,7 +894,9 @@
   "bearing" : "north",
   "name" : "Chocolatería de la Puerta del Sol",
   "location_id" : "7626475",
+  "rating" : "3.1",
   "price_level" : "$",
+  "cuisine_types" : "Cafe, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/98/af/f6/chocolateria-de-la-puerta.jpg"
 }, {
   "address_obj" : {
@@ -820,7 +911,9 @@
   "bearing" : "northwest",
   "name" : "Chocolatería Tacita de Plata",
   "location_id" : "14344384",
+  "rating" : "3.9",
   "price_level" : "$",
+  "cuisine_types" : "Cafe, Spanish, Street Food",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/c0/d1/49/teamporras-o-teamchurros.jpg"
 }, {
   "address_obj" : {
@@ -835,7 +928,9 @@
   "bearing" : "northwest",
   "name" : "Chocolatería San Ginés",
   "location_id" : "13219718",
+  "rating" : "3.6",
   "price_level" : "$",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/11/91/25/95/fachada-y-terraza-exterior.jpg"
 }, {
   "address_obj" : {
@@ -850,7 +945,9 @@
   "bearing" : "northwest",
   "name" : "Churrería-Chocolatería Las Farolas",
   "location_id" : "8808426",
+  "rating" : "3.8",
   "price_level" : "$",
+  "cuisine_types" : "Cafe, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/bc/cb/c1/churreria-chocolateria.jpg"
 }, {
   "address_obj" : {
@@ -865,7 +962,9 @@
   "bearing" : "north",
   "name" : "Madrid 1883 churrería - chocolatería",
   "location_id" : "10798525",
+  "rating" : "4.3",
   "price_level" : "$",
+  "cuisine_types" : "Cafe, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0d/10/8b/3f/delicious-porras-and.jpg"
 }, {
   "address_obj" : {
@@ -880,7 +979,9 @@
   "bearing" : "north",
   "name" : "Bar Santurce",
   "location_id" : "2520579",
+  "rating" : "3.7",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Spanish, Pub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/06/b8/d1/dd/especial.jpg"
 }, {
   "address_obj" : {
@@ -895,7 +996,9 @@
   "bearing" : "north",
   "name" : "Bar La Paloma",
   "location_id" : "5776114",
+  "rating" : "4.3",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Seafood, Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/2f/5a/5e/27/caption.jpg"
 }, {
   "address_obj" : {
@@ -910,8 +1013,27 @@
   "bearing" : "north",
   "name" : "El Boqueron",
   "location_id" : "991474",
+  "rating" : "4.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Seafood, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0f/d3/b0/ae/las-almejas-con-limon.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle Olvido 92 Corner with C/ Julio Merino, 28026 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28026",
+    "street1" : "Calle Olvido 92",
+    "street2" : "Corner with C/ Julio Merino"
+  },
+  "distance" : "0.3292437731978359",
+  "bearing" : "east",
+  "name" : "Royal Cantonés",
+  "location_id" : "2024342",
+  "rating" : "4.0",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Chinese, Asian",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/03/af/6e/00/royal-cantones.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -925,7 +1047,9 @@
   "bearing" : "north",
   "name" : "Restaurante El Landó",
   "location_id" : "794166",
+  "rating" : "4.4",
   "price_level" : "$$$$",
+  "cuisine_types" : "European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/5d/b3/49/churrasco-delicioso.jpg"
 }, {
   "address_obj" : {
@@ -940,23 +1064,10 @@
   "bearing" : "east",
   "name" : "El Carbón De Granada",
   "location_id" : "13449873",
+  "rating" : "4.5",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/52/fb/ff/bienvenidos.jpg"
-}, {
-  "address_obj" : {
-    "country" : "España",
-    "address_string" : "Calle del Almendro 9, 28005 Madrid España",
-    "city" : "Madrid",
-    "postalcode" : "28005",
-    "street1" : "Calle del Almendro 9",
-    "street2" : ""
-  },
-  "distance" : "2.166932003984416",
-  "bearing" : "north",
-  "name" : "Ástor",
-  "location_id" : "11896546",
-  "price_level" : "$$ - $$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0d/fb/81/4b/astor-gastro-place.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -970,7 +1081,9 @@
   "bearing" : "northeast",
   "name" : "Piantao Legazpi",
   "location_id" : "18936057",
+  "rating" : "4.4",
   "price_level" : "$$$$",
+  "cuisine_types" : "Steakhouse, Barbecue, Argentinean, International, Grill",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/19/fc/8e/f0/clientes-especiales.jpg"
 }, {
   "address_obj" : {
@@ -985,7 +1098,9 @@
   "bearing" : "north",
   "name" : "Hostal Las Fuentes",
   "location_id" : "289608",
+  "rating" : "4.3",
   "price_level" : "$$",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/13/4a/86/f8/hostal-las-fuentes.jpg"
 }, {
   "address_obj" : {
@@ -1000,7 +1115,9 @@
   "bearing" : "west",
   "name" : "Bar Gredos",
   "location_id" : "7077361",
+  "rating" : "4.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Fast Food, Spanish, Bar, Mediterranean, Pub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/11/6e/96/db/ta-img-20171201-131314.jpg"
 }, {
   "address_obj" : {
@@ -1015,7 +1132,9 @@
   "bearing" : "north",
   "name" : "Cerveceria Gonmar",
   "location_id" : "7656062",
+  "rating" : "3.9",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Spanish, Pub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0c/c6/fb/96/photo0jpg.jpg"
 }, {
   "address_obj" : {
@@ -1030,7 +1149,9 @@
   "bearing" : "west",
   "name" : "Bar Julio",
   "location_id" : "5907740",
+  "rating" : "3.8",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/11/f2/ae/39/img-20180202-200657919.jpg"
 }, {
   "address_obj" : {
@@ -1045,7 +1166,9 @@
   "bearing" : "northwest",
   "name" : "Bar La Mina",
   "location_id" : "14930692",
+  "rating" : "3.3",
   "price_level" : "N/A",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/13/e7/e4/0d/bar-la-mina.jpg"
 }, {
   "address_obj" : {
@@ -1060,7 +1183,9 @@
   "bearing" : "northwest",
   "name" : "Bar Acueducto",
   "location_id" : "10928392",
+  "rating" : "3.8",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/4d/25/d0/imprescindibles.jpg"
 }, {
   "address_obj" : {
@@ -1075,7 +1200,9 @@
   "bearing" : "east",
   "name" : "Bar El Circuito",
   "location_id" : "10443002",
+  "rating" : "4.2",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/9f/e6/dd/bar-el-circuito.jpg"
 }, {
   "address_obj" : {
@@ -1090,7 +1217,9 @@
   "bearing" : "northeast",
   "name" : "Cafetería Bar Pirámides",
   "location_id" : "7304323",
+  "rating" : "3.8",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Spanish, Mediterranean, Diner, Dining bars",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/1d/13/cb/e1/nuestra-barra.jpg"
 }, {
   "address_obj" : {
@@ -1105,7 +1234,9 @@
   "bearing" : "south",
   "name" : "Restaurante La Mancheguita 1978",
   "location_id" : "4509875",
+  "rating" : "4.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/05/66/a6/b5/la-mancheguita.jpg"
 }, {
   "address_obj" : {
@@ -1120,7 +1251,9 @@
   "bearing" : "north",
   "name" : "Casa Mariano",
   "location_id" : "8054870",
+  "rating" : "3.7",
   "price_level" : "$",
+  "cuisine_types" : "Spanish, Bar, Mediterranean, Pub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/2b/6b/eb/62/queremos-que-tu-experiencia.jpg"
 }, {
   "address_obj" : {
@@ -1135,7 +1268,9 @@
   "bearing" : "north",
   "name" : "La Brana",
   "location_id" : "3691834",
+  "rating" : "3.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/ea/bf/9d/la-brana.jpg"
 }, {
   "address_obj" : {
@@ -1150,7 +1285,9 @@
   "bearing" : "southwest",
   "name" : "Restaurante El Yate de Vigo",
   "location_id" : "5971427",
+  "rating" : "3.5",
   "price_level" : "$",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/ec/87/79/restaurante-yate-de-vigo.jpg"
 }, {
   "address_obj" : {
@@ -1165,7 +1302,9 @@
   "bearing" : "south",
   "name" : "Soul Pizza",
   "location_id" : "15026294",
+  "rating" : "4.3",
   "price_level" : "$",
+  "cuisine_types" : "Italian, Pizza",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/17/b6/10/4e/cerveza.jpg"
 }, {
   "address_obj" : {
@@ -1180,7 +1319,9 @@
   "bearing" : "southwest",
   "name" : "Fnac Café by Nero Coffee Show",
   "location_id" : "10468826",
+  "rating" : "4.8",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Cafe, Italian, Spanish, Argentinean",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/1c/37/b9/mokaccinos-de-diferentes.jpg"
 }, {
   "address_obj" : {
@@ -1195,7 +1336,9 @@
   "bearing" : "west",
   "name" : "Anubis Coctelería Sambil",
   "location_id" : "12911782",
+  "rating" : "2.5",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Pub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/12/6c/da/20/photo0jpg.jpg"
 }, {
   "address_obj" : {
@@ -1210,7 +1353,9 @@
   "bearing" : "north",
   "name" : "La Tuerta Funky Castizo",
   "location_id" : "17791570",
+  "rating" : "4.6",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Bar, European, Spanish, Pub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/19/67/58/b7/interior.jpg"
 }, {
   "address_obj" : {
@@ -1225,7 +1370,9 @@
   "bearing" : "south",
   "name" : "Bar la Morcilla",
   "location_id" : "8451223",
+  "rating" : "3.8",
   "price_level" : "$",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/c6/df/78/bar-la-morcilla.jpg"
 }, {
   "address_obj" : {
@@ -1240,7 +1387,9 @@
   "bearing" : "south",
   "name" : "Vértice Roomspace",
   "location_id" : "3386102",
+  "rating" : "3.4",
   "price_level" : "$",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/2e/87/a1/6f/caption.jpg"
 }, {
   "address_obj" : {
@@ -1255,7 +1404,9 @@
   "bearing" : "north",
   "name" : "Jordan Cafe-Bar",
   "location_id" : "12710930",
+  "rating" : "4.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Seafood, Spanish, Mediterranean",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/10/ce/58/dc/photo2jpg.jpg"
 }, {
   "address_obj" : {
@@ -1270,7 +1421,9 @@
   "bearing" : "northeast",
   "name" : "Bar Justo",
   "location_id" : "17168861",
+  "rating" : "4.6",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Cafe, Mediterranean, Spanish, Diner",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/17/49/d3/37/entrecot-de-ternera-con.jpg"
 }, {
   "address_obj" : {
@@ -1285,7 +1438,9 @@
   "bearing" : "east",
   "name" : "Venta Carmona",
   "location_id" : "5884618",
+  "rating" : "3.6",
   "price_level" : "$",
+  "cuisine_types" : "Spanish",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -1300,7 +1455,9 @@
   "bearing" : "south",
   "name" : "Las Ventas de Velazquez",
   "location_id" : "3506067",
+  "rating" : "4.1",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0c/03/2a/ee/img-20160714-222822-largejpg.jpg"
 }, {
   "address_obj" : {
@@ -1315,7 +1472,9 @@
   "bearing" : "north",
   "name" : "La Casa del Pulpo",
   "location_id" : "5308831",
+  "rating" : "4.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Bar, Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/08/5c/ab/bf/la-casa-del-pulpo.jpg"
 }, {
   "address_obj" : {
@@ -1330,7 +1489,9 @@
   "bearing" : "south",
   "name" : "El Eskinazo",
   "location_id" : "8293102",
+  "rating" : "3.8",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Cafe, Fast Food, Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/08/ba/53/95/eskinazo.jpg"
 }, {
   "address_obj" : {
@@ -1345,7 +1506,9 @@
   "bearing" : "northeast",
   "name" : "Bar Linea 123",
   "location_id" : "5904242",
+  "rating" : "3.2",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -1360,7 +1523,9 @@
   "bearing" : "southeast",
   "name" : "El Asador de Enrique",
   "location_id" : "2490561",
+  "rating" : "2.9",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Steakhouse, Mediterranean, Barbecue, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/b4/d2/52/el-asador-de-enrique.jpg"
 }, {
   "address_obj" : {
@@ -1375,7 +1540,9 @@
   "bearing" : "northwest",
   "name" : "Restaurante Acisclo",
   "location_id" : "3443783",
+  "rating" : "4.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0b/9c/8d/11/mix-de-postres.jpg"
 }, {
   "address_obj" : {
@@ -1390,7 +1557,9 @@
   "bearing" : "southeast",
   "name" : "Bodega Restaurante La Alegria",
   "location_id" : "6762382",
+  "rating" : "4.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish, Wine Bar",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0f/af/68/02/barra.jpg"
 }, {
   "address_obj" : {
@@ -1405,23 +1574,10 @@
   "bearing" : "southwest",
   "name" : "Restaurante Changó",
   "location_id" : "5607483",
+  "rating" : "3.6",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Steakhouse, Mediterranean, Spanish, Healthy",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/8f/15/76/el-jardin.jpg"
-}, {
-  "address_obj" : {
-    "country" : "España",
-    "address_string" : "Avenida Real De Pinto, 158, 28021 Madrid España",
-    "city" : "Madrid",
-    "postalcode" : "28021",
-    "street1" : "Avenida Real De Pinto, 158",
-    "street2" : ""
-  },
-  "distance" : "1.537872248109168",
-  "bearing" : "south",
-  "name" : "Restaurante El Cortijo",
-  "location_id" : "5971783",
-  "price_level" : "$$ - $$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/13/7a/df/salon-primera-planta.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -1435,8 +1591,27 @@
   "bearing" : "southwest",
   "name" : "La Parrilla de Leganes",
   "location_id" : "2012770",
+  "rating" : "4.2",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish, Contemporary",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/28/78/88/08/especialidad-en-arroces.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Avenida Real De Pinto, 158, 28021 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28021",
+    "street1" : "Avenida Real De Pinto, 158",
+    "street2" : ""
+  },
+  "distance" : "1.537872248109168",
+  "bearing" : "south",
+  "name" : "Restaurante El Cortijo",
+  "location_id" : "5971783",
+  "rating" : "3.2",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "European, Spanish",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/13/7a/df/salon-primera-planta.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -1450,7 +1625,9 @@
   "bearing" : "southwest",
   "name" : "RESTAURANTE BRASAYLEÑA C.C. PARQUESUR",
   "location_id" : "5979549",
+  "rating" : "3.7",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Steakhouse, Brazilian, Barbecue, Grill",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/43/27/7c/brasaylena.jpg"
 }, {
   "address_obj" : {
@@ -1465,7 +1642,9 @@
   "bearing" : "south",
   "name" : "La Antigua Churrería - Getafe",
   "location_id" : "7392506",
+  "rating" : "3.0",
   "price_level" : "$",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/12/66/96/6e/chocolate-con-churros.jpg"
 }, {
   "address_obj" : {
@@ -1480,7 +1659,9 @@
   "bearing" : "northwest",
   "name" : "Passaparola L´Originale",
   "location_id" : "4907989",
+  "rating" : "4.3",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Italian, Pizza, Mediterranean, European",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/06/60/17/74/pizza-primavera.jpg"
 }, {
   "address_obj" : {
@@ -1495,7 +1676,9 @@
   "bearing" : "northwest",
   "name" : "El Timón Del Terraza",
   "location_id" : "4149419",
+  "rating" : "4.6",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Seafood, Spanish, Healthy",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/c5/b6/45/el-timon-del-terraza.jpg"
 }, {
   "address_obj" : {
@@ -1510,7 +1693,9 @@
   "bearing" : "northwest",
   "name" : "Restaurante Bahia de Vigo",
   "location_id" : "6583022",
+  "rating" : "4.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish, Mediterranean",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/1f/b2/07/restaurante-bahia-de.jpg"
 }, {
   "address_obj" : {
@@ -1525,7 +1710,9 @@
   "bearing" : "northeast",
   "name" : "Sambhad Café Bar",
   "location_id" : "8834385",
+  "rating" : "4.9",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/c3/8d/88/cocktail-de-autor.jpg"
 }, {
   "address_obj" : {
@@ -1540,7 +1727,9 @@
   "bearing" : "northwest",
   "name" : "Bar San Matias",
   "location_id" : "4882942",
+  "rating" : "4.2",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0b/4f/32/25/img-20160509-143145-largejpg.jpg"
 }, {
   "address_obj" : {
@@ -1555,7 +1744,9 @@
   "bearing" : "north",
   "name" : "Las Murallas Tapas Bar Restaurante",
   "location_id" : "12142837",
+  "rating" : "2.2",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/6f/ed/d3/terraza-para-evento-privado.jpg"
 }, {
   "address_obj" : {
@@ -1570,7 +1761,9 @@
   "bearing" : "north",
   "name" : "Cocodrilo Rock Bar",
   "location_id" : "10343934",
+  "rating" : "4.7",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0b/82/bf/e2/cocodrilo-rock-bar.jpg"
 }, {
   "address_obj" : {
@@ -1585,7 +1778,9 @@
   "bearing" : "east",
   "name" : "Restaurante La Suegra",
   "location_id" : "12971634",
+  "rating" : "3.3",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Latin, Colombian",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/11/b9/7c/69/sin-duda-uno-de-los-platos.jpg"
 }, {
   "address_obj" : {
@@ -1600,7 +1795,9 @@
   "bearing" : "northwest",
   "name" : "Restaurante Guang Zhou",
   "location_id" : "8858241",
+  "rating" : "4.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Chinese, Asian",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0a/6e/b0/ec/salon.jpg"
 }, {
   "address_obj" : {
@@ -1615,7 +1812,9 @@
   "bearing" : "north",
   "name" : "El Mercado de Montiz",
   "location_id" : "8684350",
+  "rating" : "3.7",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0b/d3/2d/27/el-mercado-de-montiz.jpg"
 }, {
   "address_obj" : {
@@ -1630,7 +1829,9 @@
   "bearing" : "northeast",
   "name" : "Mesón Molinero",
   "location_id" : "990935",
+  "rating" : "4.7",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Japanese, Steakhouse, Seafood, Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/05/1d/ee/f7/molinero.jpg"
 }, {
   "address_obj" : {
@@ -1645,7 +1846,9 @@
   "bearing" : "southwest",
   "name" : "Bovia del Viso",
   "location_id" : "13834221",
+  "rating" : "4.1",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "International, Spanish, Steakhouse, Mediterranean",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/12/65/4d/17/ambiente-acogedor-comida.jpg"
 }, {
   "address_obj" : {
@@ -1660,7 +1863,9 @@
   "bearing" : "northeast",
   "name" : "Churrería-Chocolatería Las Farolas de la calle Extremadura",
   "location_id" : "15519827",
+  "rating" : "3.3",
   "price_level" : "$",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/2d/71/68/e7/caption.jpg"
 }, {
   "address_obj" : {
@@ -1675,7 +1880,9 @@
   "bearing" : "northeast",
   "name" : "Botafumeiro",
   "location_id" : "5794542",
+  "rating" : "4.2",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish, Mediterranean",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0d/ee/9b/21/botafumeiro.jpg"
 }, {
   "address_obj" : {
@@ -1690,7 +1897,9 @@
   "bearing" : "southwest",
   "name" : "Don Antonio Restaurante",
   "location_id" : "5811052",
+  "rating" : "3.5",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Steakhouse, Mediterranean, Barbecue, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/11/82/37/a2/calidad-precio-malisima.jpg"
 }, {
   "address_obj" : {
@@ -1705,7 +1914,9 @@
   "bearing" : "southwest",
   "name" : "Asador Avelino",
   "location_id" : "3599917",
+  "rating" : "4.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Steakhouse, Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/04/84/6b/00/asador-avelino.jpg"
 }, {
   "address_obj" : {
@@ -1720,7 +1931,9 @@
   "bearing" : "northwest",
   "name" : "Restaurante Bistrot Saconia",
   "location_id" : "3847086",
+  "rating" : "4.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/1b/74/24/7c/rape-en-salsa-marinera.jpg"
 }, {
   "address_obj" : {
@@ -1735,7 +1948,9 @@
   "bearing" : "east",
   "name" : "El Puchero",
   "location_id" : "795302",
+  "rating" : "4.1",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/83/6d/a1/el-puchero-comida-de.jpg"
 }, {
   "address_obj" : {
@@ -1750,7 +1965,9 @@
   "bearing" : "east",
   "name" : "Restaurante Urumea",
   "location_id" : "5493089",
+  "rating" : "4.3",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish, Mediterranean",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0a/77/5f/e6/falda-de-ternera-una.jpg"
 }, {
   "address_obj" : {
@@ -1765,7 +1982,9 @@
   "bearing" : "south",
   "name" : "Periplo Cafe-Bar",
   "location_id" : "8105679",
+  "rating" : "4.9",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Mediterranean, Greek, Gastropub, European",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0d/40/39/b3/periplo-cafe.jpg"
 }, {
   "address_obj" : {
@@ -1780,7 +1999,9 @@
   "bearing" : "southeast",
   "name" : "El Cardeño",
   "location_id" : "6383558",
+  "rating" : "4.7",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish, Healthy",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/ce/b3/35/lomo-alto-de-ternera.jpg"
 }, {
   "address_obj" : {
@@ -1795,7 +2016,9 @@
   "bearing" : "south",
   "name" : "Taberna de Paula",
   "location_id" : "6701548",
+  "rating" : "4.6",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/05/fa/ce/9c/taberna-de-paula.jpg"
 }, {
   "address_obj" : {
@@ -1810,7 +2033,9 @@
   "bearing" : "south",
   "name" : "Restaurante La Despensa",
   "location_id" : "991149",
+  "rating" : "4.2",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish, Healthy, Dining bars",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/19/3a/b5/57/la-despensa.jpg"
 }, {
   "address_obj" : {
@@ -1825,7 +2050,9 @@
   "bearing" : "east",
   "name" : "De la Riva",
   "location_id" : "1059372",
+  "rating" : "4.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/04/2a/de/a5/de-la-riva.jpg"
 }, {
   "address_obj" : {
@@ -1840,7 +2067,9 @@
   "bearing" : "south",
   "name" : "El Llar",
   "location_id" : "991035",
+  "rating" : "4.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/26/87/f3/img-20170108-145604-largejpg.jpg"
 }, {
   "address_obj" : {
@@ -1855,7 +2084,9 @@
   "bearing" : "east",
   "name" : "La Parrilla de Andorina",
   "location_id" : "3753258",
+  "rating" : "4.2",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/06/c7/f0/aa/la-parrilla-de-andorina.jpg"
 }, {
   "address_obj" : {
@@ -1870,7 +2101,9 @@
   "bearing" : "southeast",
   "name" : "Intercontinental Madrid By Ihg",
   "location_id" : "231634",
+  "rating" : "4.5",
   "price_level" : "$$$$",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/03/cc/c9/34/intercontinental-madrid.jpg"
 }, {
   "address_obj" : {
@@ -1885,7 +2118,9 @@
   "bearing" : "south",
   "name" : "The Dash",
   "location_id" : "9861215",
+  "rating" : "4.0",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0d/b6/80/a0/the-dash.jpg"
 }, {
   "address_obj" : {
@@ -1899,7 +2134,9 @@
   "bearing" : "southeast",
   "name" : "Parque Bar Botánico",
   "location_id" : "25410989",
+  "rating" : "4.5",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Gastropub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/28/ba/14/60/bar-de-cocteleria-y-platos.jpg"
 }, {
   "address_obj" : {
@@ -1914,7 +2151,9 @@
   "bearing" : "south",
   "name" : "Bar Manolo",
   "location_id" : "7226122",
+  "rating" : "3.9",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Cafe, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/1f/fd/c2/bar-manolo.jpg"
 }, {
   "address_obj" : {
@@ -1929,7 +2168,9 @@
   "bearing" : "north",
   "name" : "Casa Pepe",
   "location_id" : "2138149",
+  "rating" : "3.5",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/2f/7e/79/f8/caption.jpg"
 }, {
   "address_obj" : {
@@ -1944,7 +2185,9 @@
   "bearing" : "east",
   "name" : "Casa Sotero",
   "location_id" : "5794610",
+  "rating" : "4.4",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Spanish, Mediterranean",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/a8/3b/7e/img-20170312-wa0012-largejpg.jpg"
 }, {
   "address_obj" : {
@@ -1959,7 +2202,9 @@
   "bearing" : "south",
   "name" : "Bar Mentrida",
   "location_id" : "7337001",
+  "rating" : "3.6",
   "price_level" : "$",
+  "cuisine_types" : "Spanish, Bar, Pub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/08/02/26/ea/bar-mentrida.jpg"
 }, {
   "address_obj" : {
@@ -1974,7 +2219,9 @@
   "bearing" : "south",
   "name" : "Bar Restaurante Ponzano",
   "location_id" : "3540273",
+  "rating" : "3.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/05/6e/84/47/nuestro-cocido-madrileno.jpg"
 }, {
   "address_obj" : {
@@ -1989,7 +2236,9 @@
   "bearing" : "south",
   "name" : "Malasaña",
   "location_id" : "246519",
+  "rating" : "4.4",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/2f/61/42/b6/having-a-nice-afternoon.jpg"
 }, {
   "address_obj" : {
@@ -2004,7 +2253,9 @@
   "bearing" : "southeast",
   "name" : "Cervecería Alonso",
   "location_id" : "9803534",
+  "rating" : "3.9",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Seafood, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0a/47/6a/05/callos.jpg"
 }, {
   "address_obj" : {
@@ -2019,7 +2270,9 @@
   "bearing" : "south",
   "name" : "Sky Bar & Terraza 360º",
   "location_id" : "19202975",
+  "rating" : "3.2",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/28/ef/22/0a/3600-rooftop-bar.jpg"
 }, {
   "address_obj" : {
@@ -2034,7 +2287,9 @@
   "bearing" : "south",
   "name" : "Bar Padrao",
   "location_id" : "8374900",
+  "rating" : "3.9",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Spanish, Pub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/08/43/c9/b7/bar-padrao.jpg"
 }, {
   "address_obj" : {
@@ -2049,7 +2304,9 @@
   "bearing" : "east",
   "name" : "Restaurante De María - Felíx Boix",
   "location_id" : "795312",
+  "rating" : "4.3",
   "price_level" : "$$$$",
+  "cuisine_types" : "Steakhouse, Barbecue, European, Spanish, Argentinean",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/80/f5/7e/de-maria-felix-boix.jpg"
 }, {
   "address_obj" : {
@@ -2064,7 +2321,9 @@
   "bearing" : "east",
   "name" : "Mesón Txistu",
   "location_id" : "945080",
+  "rating" : "3.9",
   "price_level" : "$$$$",
+  "cuisine_types" : "Steakhouse, Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/05/59/27/d2/txistu.jpg"
 }, {
   "address_obj" : {
@@ -2079,7 +2338,9 @@
   "bearing" : "east",
   "name" : "Restaurante Libanes Fairuz",
   "location_id" : "10465832",
+  "rating" : "4.2",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Lebanese",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1f/18/40/59/fachada-principal.jpg"
 }, {
   "address_obj" : {
@@ -2094,7 +2355,9 @@
   "bearing" : "southeast",
   "name" : "Restaurante Korea",
   "location_id" : "991203",
+  "rating" : "4.2",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Korean",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -2109,7 +2372,9 @@
   "bearing" : "southeast",
   "name" : "Los Montes de Galicia",
   "location_id" : "2006562",
+  "rating" : "4.8",
   "price_level" : "$$$$",
+  "cuisine_types" : "Spanish, International, Mediterranean, Healthy",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/1a/da/af/09/varios-ambientes-con.jpg"
 }, {
   "address_obj" : {
@@ -2124,23 +2389,27 @@
   "bearing" : "southeast",
   "name" : "Pilar Akaneya",
   "location_id" : "21058665",
+  "rating" : "4.8",
   "price_level" : "$$$$",
+  "cuisine_types" : "Japanese, Barbecue, Kyoto cuisine, Asian",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/99/28/16/preapertura-ya-puedes.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
-    "address_string" : "Calle Infanta Mercedes 79, 28020 Madrid España",
+    "address_string" : "Calle Del Padre Damian 23 Hotel NH Collection Madrid Eurobuilding, 28036 Madrid España",
     "city" : "Madrid",
-    "postalcode" : "28020",
-    "street1" : "Calle Infanta Mercedes 79",
-    "street2" : ""
+    "postalcode" : "28036",
+    "street1" : "Calle Del Padre Damian 23",
+    "street2" : "Hotel NH Collection Madrid Eurobuilding"
   },
-  "distance" : "0.7137639264094701",
+  "distance" : "1.2241974018654358",
   "bearing" : "east",
-  "name" : "Asador Donostiarra",
-  "location_id" : "781020",
+  "name" : "DiverXO",
+  "location_id" : "7179537",
+  "rating" : "4.6",
   "price_level" : "$$$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/20/ad/05/81/la-barandilla-del-paseo.jpg"
+  "cuisine_types" : "European, Spanish, Fusion",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/19/2d/50/0e/diverxo.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -2154,7 +2423,9 @@
   "bearing" : "east",
   "name" : "L'Albufera Restaurante",
   "location_id" : "717251",
+  "rating" : "4.2",
   "price_level" : "$$$$",
+  "cuisine_types" : "Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/14/b3/99/ba/restaurante-l-albufera.jpg"
 }, {
   "address_obj" : {
@@ -2169,7 +2440,9 @@
   "bearing" : "south",
   "name" : "Chocolatería Valor",
   "location_id" : "16800567",
+  "rating" : "1.9",
   "price_level" : "$",
+  "cuisine_types" : "Cafe",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/2e/55/c5/d6/caption.jpg"
 }, {
   "address_obj" : {
@@ -2184,7 +2457,9 @@
   "bearing" : "southeast",
   "name" : "Chocolateria Churreria Milagros",
   "location_id" : "9703968",
+  "rating" : "4.6",
   "price_level" : "$",
+  "cuisine_types" : "Spanish, Cafe",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/f8/80/43/chocolateria-churreria.jpg"
 }, {
   "address_obj" : {
@@ -2199,7 +2474,9 @@
   "bearing" : "south",
   "name" : "Churreria Chocolateria la Encarnita",
   "location_id" : "8757088",
+  "rating" : "3.7",
   "price_level" : "$",
+  "cuisine_types" : "Cafe, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0d/76/6e/6b/20161030-090128-largejpg.jpg"
 }, {
   "address_obj" : {
@@ -2214,7 +2491,9 @@
   "bearing" : "east",
   "name" : "Restaurante Casa Salvador",
   "location_id" : "2034008",
+  "rating" : "4.2",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/06/48/00/57/restaurante-casa-salvador.jpg"
 }, {
   "address_obj" : {
@@ -2229,7 +2508,9 @@
   "bearing" : "east",
   "name" : "Sidrería El Tigre - Tapas Caseras",
   "location_id" : "5907307",
+  "rating" : "4.0",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/06/e3/ac/fc/el-tigre.jpg"
 }, {
   "address_obj" : {
@@ -2244,8 +2525,27 @@
   "bearing" : "northeast",
   "name" : "Casa Federica",
   "location_id" : "2715907",
+  "rating" : "4.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Argentinean",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0f/6c/09/7f/photo0jpg.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle Infantas 30, 28004 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28004",
+    "street1" : "Calle Infantas 30",
+    "street2" : ""
+  },
+  "distance" : "0.7642223981715208",
+  "bearing" : "east",
+  "name" : "El Tigre",
+  "location_id" : "1829992",
+  "rating" : "3.8",
+  "price_level" : "$",
+  "cuisine_types" : "Bar, Mediterranean, Spanish",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/2f/6e/b1/08/caption.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -2259,7 +2559,9 @@
   "bearing" : "east",
   "name" : "Meson Restaurante La Mi Venta",
   "location_id" : "1511527",
+  "rating" : "4.6",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/12/47/8f/25/barra.jpg"
 }, {
   "address_obj" : {
@@ -2274,7 +2576,9 @@
   "bearing" : "east",
   "name" : "Restaurante La Primera",
   "location_id" : "11806783",
+  "rating" : "4.3",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/27/ed/a9/42/caption.jpg"
 }, {
   "address_obj" : {
@@ -2289,7 +2593,9 @@
   "bearing" : "southeast",
   "name" : "Rosi La Loca",
   "location_id" : "7204621",
+  "rating" : "4.6",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "International, Spanish, Contemporary",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/1b/8e/74/f1/portada-rosi-la-loca.jpg"
 }, {
   "address_obj" : {
@@ -2304,7 +2610,9 @@
   "bearing" : "northeast",
   "name" : "Numa Pompilio Restaurante",
   "location_id" : "12544783",
+  "rating" : "3.4",
   "price_level" : "$$$$",
+  "cuisine_types" : "Italian, Mediterranean, European",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0f/ad/61/13/interior-del-restaurante.jpg"
 }, {
   "address_obj" : {
@@ -2319,7 +2627,9 @@
   "bearing" : "south",
   "name" : "El fogón de Carmela",
   "location_id" : "5484826",
+  "rating" : "4.7",
   "price_level" : "$",
+  "cuisine_types" : "Seafood, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/04/d1/7b/29/el-fogon-de-carmela.jpg"
 }, {
   "address_obj" : {
@@ -2334,7 +2644,9 @@
   "bearing" : "west",
   "name" : "Restaurante Vicky",
   "location_id" : "10028604",
+  "rating" : "4.0",
   "price_level" : "$",
+  "cuisine_types" : "Spanish, Mediterranean",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/b2/ec/ed/img-20170318-141623-largejpg.jpg"
 }, {
   "address_obj" : {
@@ -2349,7 +2661,9 @@
   "bearing" : "south",
   "name" : "Chulapas Cafe",
   "location_id" : "4366743",
+  "rating" : "4.9",
   "price_level" : "$",
+  "cuisine_types" : "Latin, Colombian",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0c/cd/83/ed/comida-colombiana.jpg"
 }, {
   "address_obj" : {
@@ -2364,7 +2678,9 @@
   "bearing" : "northeast",
   "name" : "Restaurante Campanilla",
   "location_id" : "4062487",
+  "rating" : "4.6",
   "price_level" : "$",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/10/71/fb/44/fachada.jpg"
 }, {
   "address_obj" : {
@@ -2379,7 +2695,9 @@
   "bearing" : "southeast",
   "name" : "La Taberna Fantástica",
   "location_id" : "7233669",
+  "rating" : "4.5",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/1c/69/c9/la-taberna-fantastica.jpg"
 }, {
   "address_obj" : {
@@ -2393,7 +2711,9 @@
   "bearing" : "southwest",
   "name" : "Bar Camarero",
   "location_id" : "6516308",
+  "rating" : "4.7",
   "price_level" : "$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/2f/31/42/91/caption.jpg"
 }, {
   "address_obj" : {
@@ -2408,7 +2728,9 @@
   "bearing" : "north",
   "name" : "Restaurante Goterón",
   "location_id" : "991300",
+  "rating" : "4.1",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/8d/27/f6/restaurante-goteron.jpg"
 }, {
   "address_obj" : {
@@ -2423,7 +2745,9 @@
   "bearing" : "west",
   "name" : "Mesón El Álamo",
   "location_id" : "3648250",
+  "rating" : "4.4",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Steakhouse, Mediterranean, European, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/1e/b9/c3/de/caption.jpg"
 }, {
   "address_obj" : {
@@ -2438,7 +2762,9 @@
   "bearing" : "south",
   "name" : "A Cantinella",
   "location_id" : "2010928",
+  "rating" : "3.7",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Italian, Pizza, Mediterranean, European",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/35/e4/ca/a-cantinella.jpg"
 }, {
   "address_obj" : {
@@ -2453,7 +2779,9 @@
   "bearing" : "southwest",
   "name" : "Como En Casa",
   "location_id" : "5615438",
+  "rating" : "4.3",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish, Grill, Healthy",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/69/6c/cf/vitrina-entrantes.jpg"
 }, {
   "address_obj" : {
@@ -2468,7 +2796,9 @@
   "bearing" : "east",
   "name" : "O'clock cervecería cócteleria y cachimbas",
   "location_id" : "19411948",
+  "rating" : "3.0",
   "price_level" : "N/A",
+  "cuisine_types" : "Bar, International, Spanish, Pub",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -2483,7 +2813,9 @@
   "bearing" : "north",
   "name" : "Kialma",
   "location_id" : "3631553",
+  "rating" : "3.1",
   "price_level" : "$",
+  "cuisine_types" : "Bar",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -2498,7 +2830,9 @@
   "bearing" : "west",
   "name" : "Guanabara By El Rodizio",
   "location_id" : "21390487",
+  "rating" : "4.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Steakhouse, Brazilian",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/1d/f4/7a/ee/caption.jpg"
 }, {
   "address_obj" : {
@@ -2513,7 +2847,9 @@
   "bearing" : "northwest",
   "name" : "La Nena",
   "location_id" : "21369579",
+  "rating" : "4.6",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish, Healthy, Contemporary",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/1d/3e/ae/d3/zona-de-barra-del-restaurante.jpg"
 }, {
   "address_obj" : {
@@ -2528,7 +2864,9 @@
   "bearing" : "west",
   "name" : "Farándula Fearless Bar",
   "location_id" : "15035329",
+  "rating" : "4.3",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Bar, International, Pub, Fusion, Gastropub",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/25/28/a1/ba/farandula-fearless-cocktail.jpg"
 }, {
   "address_obj" : {
@@ -2543,23 +2881,10 @@
   "bearing" : "west",
   "name" : "Ibis Madrid Calle Alcalá",
   "location_id" : "653686",
-  "price_level" : "$$",
+  "rating" : "4.1",
+  "price_level" : "$",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0e/b0/6d/44/valentin-beato.jpg"
-}, {
-  "address_obj" : {
-    "country" : "España",
-    "address_string" : "Calle de Santa Tecla 58, 28022 Madrid España",
-    "city" : "Madrid",
-    "postalcode" : "28022",
-    "street1" : "Calle de Santa Tecla 58",
-    "street2" : ""
-  },
-  "distance" : "0.556431095471134",
-  "bearing" : "north",
-  "name" : "Bar Ramirez",
-  "location_id" : "12158877",
-  "price_level" : "$$ - $$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/aa/dc/e4/ramirez.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -2573,8 +2898,27 @@
   "bearing" : "east",
   "name" : "Riyadh Air Metropolitan Stadium, Madrid",
   "location_id" : "12909720",
+  "rating" : "4.2",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/16/b5/6b/ef/atrevete-a-probarnos.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle de Santa Tecla 58, 28022 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28022",
+    "street1" : "Calle de Santa Tecla 58",
+    "street2" : ""
+  },
+  "distance" : "0.556431095471134",
+  "bearing" : "north",
+  "name" : "Bar Ramirez",
+  "location_id" : "12158877",
+  "rating" : "4.3",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish, Cafe, International, Mediterranean",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/aa/dc/e4/ramirez.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -2588,7 +2932,9 @@
   "bearing" : "north",
   "name" : "Bar Cafeteria Trabancos",
   "location_id" : "9558581",
+  "rating" : "4.4",
   "price_level" : "$",
+  "cuisine_types" : "Spanish",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -2603,7 +2949,9 @@
   "bearing" : "west",
   "name" : "A'Conchina",
   "location_id" : "5776243",
+  "rating" : "4.3",
   "price_level" : "$",
+  "cuisine_types" : "Bar, Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/09/c4/03/1f/a-conchina.jpg"
 }, {
   "address_obj" : {
@@ -2618,7 +2966,9 @@
   "bearing" : "north",
   "name" : "Sercotel Alcalá 611",
   "location_id" : "230841",
+  "rating" : "4.4",
   "price_level" : "$$",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/11/54/ce/d1/sercotel-alcala-611.jpg"
 }, {
   "address_obj" : {
@@ -2633,7 +2983,9 @@
   "bearing" : "west",
   "name" : "Sapama",
   "location_id" : "3378462",
+  "rating" : "3.3",
   "price_level" : "$",
+  "cuisine_types" : "Japanese, German, Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/06/66/d2/87/sapama.jpg"
 }, {
   "address_obj" : {
@@ -2648,7 +3000,9 @@
   "bearing" : "south",
   "name" : "Bar Longares",
   "location_id" : "17346351",
+  "rating" : "4.5",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -2663,7 +3017,9 @@
   "bearing" : "southwest",
   "name" : "Bar El Rincon De Ana",
   "location_id" : "2717867",
+  "rating" : "3.6",
   "price_level" : "$",
+  "cuisine_types" : "Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0b/4e/4e/5e/dans-une-petite-ruelle.jpg"
 }, {
   "address_obj" : {
@@ -2678,7 +3034,9 @@
   "bearing" : "northeast",
   "name" : "Plenilunio",
   "location_id" : "3319929",
+  "rating" : "3.7",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/12/a0/78/0f/centro-comercial-plenilunio.jpg"
 }, {
   "address_obj" : {
@@ -2693,7 +3051,9 @@
   "bearing" : "northwest",
   "name" : "Beytna Restaurante",
   "location_id" : "18968021",
+  "rating" : "4.7",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Lebanese, Mediterranean, Spanish, Middle Eastern, Arabic",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/19/b9/d0/b9/beytna-que-significa.jpg"
 }, {
   "address_obj" : {
@@ -2708,23 +3068,10 @@
   "bearing" : "south",
   "name" : "Restaurante O Camiño",
   "location_id" : "2717077",
+  "rating" : "3.8",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Seafood, Mediterranean, Spanish, Contemporary",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0f/0a/4f/fe/le-hemos-dado-unos-retoques.jpg"
-}, {
-  "address_obj" : {
-    "country" : "España",
-    "address_string" : "C/ LOPEZ DE ARANDA 46 Parque Quinta de los Molinos y Arturo Soria, 28027 Madrid España",
-    "city" : "Madrid",
-    "postalcode" : "28027",
-    "street1" : "C/ LOPEZ DE ARANDA 46",
-    "street2" : "Parque Quinta de los Molinos y Arturo Soria"
-  },
-  "distance" : "1.427710948897555",
-  "bearing" : "west",
-  "name" : "Aranda Madrid",
-  "location_id" : "11743176",
-  "price_level" : "$$ - $$$",
-  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0d/78/5f/3a/sala-ventanales.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -2738,8 +3085,27 @@
   "bearing" : "northwest",
   "name" : "Restaurante Lan Lan Madrid",
   "location_id" : "4044427",
+  "rating" : "3.9",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Asian, Sushi, Fusion",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/03/af/b5/cd/getlstd-property-photo.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "C/ LOPEZ DE ARANDA 46 Parque Quinta de los Molinos y Arturo Soria, 28027 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28027",
+    "street1" : "C/ LOPEZ DE ARANDA 46",
+    "street2" : "Parque Quinta de los Molinos y Arturo Soria"
+  },
+  "distance" : "1.427710948897555",
+  "bearing" : "west",
+  "name" : "Aranda Madrid",
+  "location_id" : "11743176",
+  "rating" : "4.3",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "International, Mediterranean, Spanish, Fusion",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0d/78/5f/3a/sala-ventanales.jpg"
 }, {
   "address_obj" : {
     "country" : "España",
@@ -2753,7 +3119,9 @@
   "bearing" : "southeast",
   "name" : "Restaurante Nido",
   "location_id" : "3930800",
+  "rating" : "3.5",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Mediterranean, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/1d/00/a4/7f/deliciosos-arroces-para.jpg"
 }, {
   "address_obj" : {
@@ -2768,7 +3136,9 @@
   "bearing" : "northeast",
   "name" : "Hotel Maydrit Airport",
   "location_id" : "1153301",
+  "rating" : "4.3",
   "price_level" : "$$",
+  "cuisine_types" : "",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/18/19/04/71/hotel-maydrit-airport.jpg"
 }, {
   "address_obj" : {
@@ -2783,7 +3153,9 @@
   "bearing" : "south",
   "name" : "Mulan",
   "location_id" : "988069",
+  "rating" : "4.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Chinese, Asian",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0a/05/72/c1/mulan.jpg"
 }, {
   "address_obj" : {
@@ -2798,7 +3170,9 @@
   "bearing" : "north",
   "name" : "Heladería Arazá Gelatería & Chocolatería",
   "location_id" : "24948488",
+  "rating" : "3.0",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -2813,7 +3187,9 @@
   "bearing" : "northeast",
   "name" : "Churreria Chocolateria El Artesano Desde 1983",
   "location_id" : "15522713",
+  "rating" : "4.4",
   "price_level" : "$",
+  "cuisine_types" : "Cafe, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-w/2f/3f/a3/c6/un-lugar-para-tomar-un.jpg"
 }, {
   "address_obj" : {
@@ -2828,7 +3204,9 @@
   "bearing" : "southwest",
   "name" : "Bar Chocolatería Fontarrón",
   "location_id" : "27894634",
+  "rating" : "N/A",
   "price_level" : "N/A",
+  "cuisine_types" : "",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -2843,7 +3221,9 @@
   "bearing" : "west",
   "name" : "Chocolatería Valor",
   "location_id" : "23935971",
+  "rating" : "5.0",
   "price_level" : "N/A",
+  "cuisine_types" : "Spanish",
   "image" : "N/A"
 }, {
   "address_obj" : {
@@ -2858,7 +3238,9 @@
   "bearing" : "west",
   "name" : "La Cocktelera Cafeteria Churreria",
   "location_id" : "12869768",
+  "rating" : "3.6",
   "price_level" : "N/A",
+  "cuisine_types" : "Spanish, Cafe",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/1b/31/83/93/desayunos-y-meriendas.jpg"
 }, {
   "address_obj" : {
@@ -2873,6 +3255,8 @@
   "bearing" : "west",
   "name" : "La Antigua Churrería - Conde de Peñalver",
   "location_id" : "6838983",
+  "rating" : "3.0",
   "price_level" : "$$ - $$$",
+  "cuisine_types" : "Cafe, Spanish",
   "image" : "https://media-cdn.tripadvisor.com/media/photo-o/12/66/94/48/chocolate-con-churros.jpg"
 } ]

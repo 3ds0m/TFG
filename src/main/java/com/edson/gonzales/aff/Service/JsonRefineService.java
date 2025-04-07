@@ -20,6 +20,7 @@ public class JsonRefineService {
     private static final String API_PHOTOS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/photos?key=" + API_KEY + "&language=en&limit=1&offset=1&source=Expert";
     private final OkHttpClient client = new OkHttpClient();
     private final ObjectMapper objectMapper = new ObjectMapper();
+
     public String processJson() {
         File inputFile = new File(INPUT_JSON_PATH);
         try {
@@ -29,9 +30,31 @@ public class JsonRefineService {
             for (JsonNode node : root) {
                 if (node.has("location_id")) {
                     String locationId = node.get("location_id").asText();
-                    String priceLevel = fetchDataFromApi(String.format(API_DETAILS_URL, locationId), "price_level");
+                    System.out.println(locationId);
+
+                    // Obtener los detalles (rating, price_level, cuisine)
+                    JsonNode apiResponse = fetchDetailsFromApi(String.format(API_DETAILS_URL, locationId));
+
+                    String rating = apiResponse.has("rating") ? apiResponse.get("rating").asText() : "N/A";
+                    String priceLevel = apiResponse.has("price_level") ? apiResponse.get("price_level").asText() : "N/A";
+
+                    // Extraer los tipos de cocina
+                    String cuisineTypes = "";
+                    if (apiResponse.has("cuisine")) {
+                        for (JsonNode cuisine : apiResponse.get("cuisine")) {
+                            if (cuisineTypes.length() > 0) {
+                                cuisineTypes += ", ";
+                            }
+                            cuisineTypes += cuisine.get("localized_name").asText();
+                        }
+                    }
+
                     String imageUrl = fetchImageUrlFromApi(String.format(API_PHOTOS_URL, locationId));
+
+                    // Añadir la información al JSON
+                    ((ObjectNode) node).put("rating", rating);
                     ((ObjectNode) node).put("price_level", priceLevel);
+                    ((ObjectNode) node).put("cuisine_types", cuisineTypes);
                     ((ObjectNode) node).put("image", imageUrl);
                 }
             }
@@ -58,21 +81,20 @@ public class JsonRefineService {
         }
     }
 
-    // Método para hacer solicitud HTTP y extraer price_level
-    private String fetchDataFromApi(String url, String jsonKey) {
+    // Metodo que construye el link de solicitud HTTP para detalles de cocina, 0rating y precio
+    private JsonNode fetchDetailsFromApi(String url) {
         Request request = new Request.Builder().url(url).build();
         try (Response response = client.newCall(request).execute()) {
             if (response.isSuccessful() && response.body() != null) {
-                JsonNode jsonResponse = objectMapper.readTree(response.body().string());
-                return jsonResponse.has(jsonKey) ? jsonResponse.get(jsonKey).asText() : "N/A";
+                return objectMapper.readTree(response.body().string());
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "N/A";
+        return null;
     }
 
-    // Método para hacer solicitud HTTP y extraer la URL de la imagen original
+    // Método para hacer solicitud HTTP y extraer la URL de la imagen
     private String fetchImageUrlFromApi(String url) {
         Request request = new Request.Builder().url(url).build();
         try (Response response = client.newCall(request).execute()) {

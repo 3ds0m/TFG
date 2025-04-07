@@ -34,7 +34,6 @@ public class ApiRequestService {
         connection.setRequestMethod("GET");
         connection.setConnectTimeout(5000);
         connection.setReadTimeout(5000);
-
         int status = connection.getResponseCode();
         if (status != 200) {
             System.out.println("Error en la solicitud: " + urlString + " Status: " + status);

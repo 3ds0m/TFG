@@ -13,7 +13,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOriginPatterns("*") // Durante el desarrollo permite pero luego poner un https://frontend.com
+                        .allowedOriginPatterns("*") // Durante el desarrollo se permite acceso a todo, luego poner un https://frontend.com
                         .allowedMethods("GET", "POST", "PUT", "DELETE") // Metodos que permite mi back
                         .allowCredentials(true);
             }

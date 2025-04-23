@@ -14,7 +14,6 @@ import java.util.Set;
 
 @Service
 public class ApiRequestService {
-
     // Método para leer las URLs desde un archivo de texto
     public List<String> readUrlsFromFile(String filePath) throws IOException {
         List<String> urls = new ArrayList<>();

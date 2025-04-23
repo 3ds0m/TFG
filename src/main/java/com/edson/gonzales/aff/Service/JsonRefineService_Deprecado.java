@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 @Service
-public class JsonRefineService {
+public class JsonRefineService_Deprecado {
     private static final String INPUT_JSON_PATH = "C:\\Users\\Edson\\Desktop\\Aff\\JSON\\combined_results.json";
     private static final String OUTPUT_JSON_PATH = "C:\\Users\\Edson\\Desktop\\Aff\\JSON\\updated_results.json";
     private static final String API_KEY = "746F3ABE44B944CDA5DCFF366DDFD396";
@@ -81,7 +81,7 @@ public class JsonRefineService {
         }
     }
 
-    // Metodo que construye el link de solicitud HTTP para detalles de cocina, 0rating y precio
+    // Metodo que construye el link de solicitud HTTP para detalles de cocina, rating y precio
     private JsonNode fetchDetailsFromApi(String url) {
         Request request = new Request.Builder().url(url).build();
         try (Response response = client.newCall(request).execute()) {

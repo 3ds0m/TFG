@@ -22,4 +22,9 @@ public interface LocationRepository extends JpaRepository<Location, Long> {
             "AND l.Cuisine_type IS NULL" +
             " AND l.image is NULL")
     List<LocationDTO> findLocationsWhereExtraFieldsAreNull();
+
+    @Query("SELECT l FROM Location l " +
+            "WHERE l.latitude IS NULL " +
+            "AND l.longitude IS NULL")
+    List<Location> findIncompleteLocations();
 }

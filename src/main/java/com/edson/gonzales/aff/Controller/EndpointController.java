@@ -1,5 +1,4 @@
 package com.edson.gonzales.aff.Controller;
-import com.edson.gonzales.aff.DTO.LocationDTO;
 import com.edson.gonzales.aff.Entity.Location;
 import com.edson.gonzales.aff.Repository.LocationRepository;
 import com.edson.gonzales.aff.Service.RPAService;

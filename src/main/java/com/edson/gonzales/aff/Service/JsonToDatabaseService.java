@@ -49,7 +49,6 @@ public class JsonToDatabaseService {
                 location.setPostalcode(addressObj.optString("postalcode", null));
                 location.setAddressString(addressObj.optString("address_string", null));
             }
-
             // Campos adicionales que vendrán después pueden ir aquí como null
             location.setImage(null);  // Ejemplo de campo que será llenado por el RPA
             location.setPhoneNumber(null);

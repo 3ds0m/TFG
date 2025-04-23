@@ -14,7 +14,6 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class JsonToDatabaseService {
-
     @Autowired
     private LocationRepository locationRepository;
 

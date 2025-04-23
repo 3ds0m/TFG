@@ -53,6 +53,11 @@ public class Location{
     private String priceLevel;
     @Column
     private String Cuisine_type;
+    //Para Mapa
+    @Column
+    private String latitude;
+    @Column
+    private String longitude;
 
     public Location() {
 

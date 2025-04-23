@@ -1,6 +1,6 @@
-https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=casera&category=restaurant&latLong=40.377245,-3.740237&radius=3&radiusUnit=km&language=es
-https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=cocteleria&category=restaurant&latLong=40.377245,-3.740237&radius=3&radiusUnit=km&language=es
-https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=bar&category=restaurant&latLong=40.377245,-3.740237&radius=3&radiusUnit=km&language=es
+https://api.content.tripadvisor.com/api/v1/location/search?key=//&searchQuery=casera&category=restaurant&latLong=40.377245,-3.740237&radius=3&radiusUnit=km&language=es
+https://api.content.tripadvisor.com/api/v1/location/search?key=//6&searchQuery=cocteleria&category=restaurant&latLong=40.377245,-3.740237&radius=3&radiusUnit=km&language=es
+https://api.content.tripadvisor.com/api/v1/location/search?key=//&searchQuery=bar&category=restaurant&latLong=40.377245,-3.740237&radius=3&radiusUnit=km&language=es
 https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=restaurante&category=restaurant&latLong=40.377245,-3.740237&radius=3&radiusUnit=km&language=es
 https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=chocolateria&category=restaurant&latLong=40.377245,-3.740237&radius=3&radiusUnit=km&language=es
 https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=casera&category=restaurant&latLong=40.436548,-3.609075&radius=3&radiusUnit=km&language=es

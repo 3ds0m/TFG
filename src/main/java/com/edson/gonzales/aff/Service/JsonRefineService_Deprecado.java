@@ -15,7 +15,7 @@ import java.io.IOException;
 public class JsonRefineService_Deprecado {
     private static final String INPUT_JSON_PATH = "C:\\Users\\Edson\\Desktop\\Aff\\JSON\\combined_results.json";
     private static final String OUTPUT_JSON_PATH = "C:\\Users\\Edson\\Desktop\\Aff\\JSON\\updated_results.json";
-    private static final String API_KEY = "746F3ABE44B944CDA5DCFF366DDFD396";
+    private static final String API_KEY = "//";
     private static final String API_DETAILS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/details?key=" + API_KEY + "&language=en&currency=USD";
     private static final String API_PHOTOS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/photos?key=" + API_KEY + "&language=en&limit=1&offset=1&source=Expert";
     private final OkHttpClient client = new OkHttpClient();

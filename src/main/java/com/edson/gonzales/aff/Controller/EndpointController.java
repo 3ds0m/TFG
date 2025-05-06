@@ -30,7 +30,7 @@ public class EndpointController {
     @GetMapping("/RPA")
     public ResponseEntity<String> getLocationsByRPA() {
         try {
-            rpaService.completarDatosDesdeGoogleMaps();
+            rpaService.completarDatosDesdeTripAdvisor();
             return ResponseEntity.ok("Datos completados exitosamente desde Google Maps.");
         } catch (Exception e) {
             e.printStackTrace();

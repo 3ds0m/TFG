@@ -2,7 +2,7 @@ package com.edson.gonzales.aff.Controller;
 
 
 import com.edson.gonzales.aff.Service.ApiRequestService;
-import com.edson.gonzales.aff.Service.JsonRefineService_Deprecado;
+import com.edson.gonzales.aff.Service.JsonRefineService;
 import com.edson.gonzales.aff.Service.JsonToDatabaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -20,15 +20,17 @@ public class ApiRequestController {
     @Autowired
     private ApiRequestService apiRequestService;
     @Autowired
-    private JsonRefineService_Deprecado jsonRefineServiceDeprecado;
+    private JsonRefineService jsonRefineServiceDeprecado;
     @Autowired
     private JsonToDatabaseService jsonToDatabaseService;
+    @Autowired
+    private JsonRefineService jsonRefineService;
 
     @GetMapping("/Restaurantes")
     public String processAllAndRefine() {
         try {
             // Rutas necesarias
-            String inputFilePath = "src/main/resources/requests.txt";
+            String inputFilePath = "src/main/resources/requesto.txt";
             String outputDir = "C:/Users/Edson/Desktop/Aff/JSON/";
             String combinedFilePath = outputDir + "combined_results.json";
 
@@ -46,12 +48,12 @@ public class ApiRequestController {
             // Paso 3: Eliminar los archivos JSON descargados (excluyendo el combinado)
             apiRequestService.deleteJsonFilesInDirectory(outputDir, "combined_results.json");
 
-            // Paso 4(Deprecado): Refinar el archivo combinado (agregar price_range e image)
-            //String refineResult =jsonRefineService.processJson();
-            //Si se usa este metodo se realizan 434 llamadas a la API
+            // Paso 4: Refinar el archivo combinado (agregar price_range e image)
+            String refineResult =jsonRefineService.processJson();
+            //Si se usa este metodo se realizan hasta (21*Cant_links) llamadas a la API
 
             // Paso 4: El resultado combinado se agrega a base de datos
-            jsonToDatabaseService.insertJsonFileToDatabase(combinedFilePath);
+            //jsonToDatabaseService.insertJsonFileToDatabase(combinedFilePath);
             return "Proceso completado: ";
 
         } catch (IOException e) {

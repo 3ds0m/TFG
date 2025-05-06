@@ -1,23 +1,16 @@
 package com.edson.gonzales.aff.Entity;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.io.Serializable;
 
 @Data
 @Builder
-@AllArgsConstructor
 @Entity
 @Table(name="Locations")
 public class Location{
-
     @Id
     @Column
     private String locationId;
@@ -27,7 +20,6 @@ public class Location{
     private String distance;
     @Column
     private String bearing;
-
     @Column
     private String street1;
     @Column
@@ -40,6 +32,12 @@ public class Location{
     private String postalcode;
     @Column
     private String addressString;
+    //Para Mapa
+    @Column
+    private String latitude;
+    @Column
+    private String longitude;
+
     //A partir de aqui es nulo en la bbdd
     @Column
     private String phoneNumber;
@@ -53,13 +51,4 @@ public class Location{
     private String priceLevel;
     @Column
     private String Cuisine_type;
-    //Para Mapa
-    @Column
-    private String latitude;
-    @Column
-    private String longitude;
-
-    public Location() {
-
-    }
 }

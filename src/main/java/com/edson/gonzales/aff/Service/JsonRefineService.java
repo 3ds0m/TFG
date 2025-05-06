@@ -12,10 +12,10 @@ import java.io.File;
 import java.io.IOException;
 
 @Service
-public class JsonRefineService_Deprecado {
+public class JsonRefineService {
     private static final String INPUT_JSON_PATH = "C:\\Users\\Edson\\Desktop\\Aff\\JSON\\combined_results.json";
     private static final String OUTPUT_JSON_PATH = "C:\\Users\\Edson\\Desktop\\Aff\\JSON\\updated_results.json";
-    private static final String API_KEY = "//";
+    private static final String API_KEY = "746F3ABE44B944CDA5DCFF366DDFD396";
     private static final String API_DETAILS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/details?key=" + API_KEY + "&language=en&currency=USD";
     private static final String API_PHOTOS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/photos?key=" + API_KEY + "&language=en&limit=1&offset=1&source=Expert";
     private final OkHttpClient client = new OkHttpClient();
@@ -36,6 +36,8 @@ public class JsonRefineService_Deprecado {
                     JsonNode apiResponse = fetchDetailsFromApi(String.format(API_DETAILS_URL, locationId));
 
                     String rating = apiResponse.has("rating") ? apiResponse.get("rating").asText() : "N/A";
+                    String phone = apiResponse.has("phone") ? apiResponse.get("phone").asText() : "N/A";
+                    String num_reviews = apiResponse.has("num_reviews") ? apiResponse.get("num_reviews").asText() : "N/A";
                     String priceLevel = apiResponse.has("price_level") ? apiResponse.get("price_level").asText() : "N/A";
 
                     // Extraer los tipos de cocina
@@ -53,6 +55,8 @@ public class JsonRefineService_Deprecado {
 
                     // Añadir la información al JSON
                     ((ObjectNode) node).put("rating", rating);
+                    ((ObjectNode) node).put("phone", phone);
+                    ((ObjectNode) node).put("num_reviews", num_reviews);
                     ((ObjectNode) node).put("price_level", priceLevel);
                     ((ObjectNode) node).put("cuisine_types", cuisineTypes);
                     ((ObjectNode) node).put("image", imageUrl);
@@ -82,7 +86,7 @@ public class JsonRefineService_Deprecado {
     }
 
     // Metodo que construye el link de solicitud HTTP para detalles de cocina, rating y precio
-    private JsonNode fetchDetailsFromApi(String url) {
+    public JsonNode fetchDetailsFromApi(String url) {
         Request request = new Request.Builder().url(url).build();
         try (Response response = client.newCall(request).execute()) {
             if (response.isSuccessful() && response.body() != null) {
@@ -95,7 +99,7 @@ public class JsonRefineService_Deprecado {
     }
 
     // Método para hacer solicitud HTTP y extraer la URL de la imagen
-    private String fetchImageUrlFromApi(String url) {
+    public String fetchImageUrlFromApi(String url) {
         Request request = new Request.Builder().url(url).build();
         try (Response response = client.newCall(request).execute()) {
             if (response.isSuccessful() && response.body() != null) {

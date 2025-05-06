@@ -1,21 +1,19 @@
 package com.edson.gonzales.aff.Service;
 
 import com.edson.gonzales.aff.DTO.LocationDTO;
-import com.edson.gonzales.aff.Entity.Location;
 import com.edson.gonzales.aff.Repository.LocationRepository;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.AllArgsConstructor;
-import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.support.StandardServletPartUtils;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.Random;
 
 @Service
 @AllArgsConstructor
@@ -23,10 +21,11 @@ public class RPAService {
 
     private final LocationRepository locationRepository;
 
-    public void completarDatosDesdeGoogleMaps() {
+    // Método para recolectar datos humanizados desde TripAdvisor
+    public void completarDatosDesdeTripAdvisor() {
         // Configuración de WebDriver para Edge
         WebDriverManager.edgedriver().setup();
-        WebDriver driver = new EdgeDriver(); // Usamos EdgeDriver
+        WebDriver driver = new EdgeDriver();  // Usamos EdgeDriver
 
         // Obtener las ubicaciones con campos nulos
         List<LocationDTO> locations = locationRepository.findLocationsWhereExtraFieldsAreNull();
@@ -34,68 +33,84 @@ public class RPAService {
         // Procesar cada una de las ubicaciones
         for (LocationDTO dto : locations) {
             try {
-                String address = dto.getName();
                 String locationId = dto.getLocationId();
-                System.out.println(address);
-                driver.get("https://www.google.com/maps");
-                Thread.sleep(2000);  // Espera para que cargue la página
+                System.out.println("Accediendo a la ubicación con ID: " + locationId);
+                driver.get("https://www.tripadvisor.com/" + locationId);  // Acceder directamente a la página de TripAdvisor
+                Thread.sleep(5000);  // Espera para que cargue la página
 
-                WebElement searchBox = driver.findElement(By.id("searchboxinput"));
-                searchBox.clear();
-                searchBox.sendKeys(address);
-                searchBox.sendKeys(Keys.ENTER);  // Iniciar la búsqueda
+                // Humanizar la interacción
+                humanizarInteraccion(driver);
 
-                Thread.sleep(5000); // Esperar para que cargue el resultado
-
-                // Variables para almacenar los datos extraídos
-                String phone = "";
-                String rating = "";
-                String reviews = "";
-                String cuisineType = "";
-                // Intentar obtener la información de teléfono
-                try {
-                    WebElement phoneNumberElement = driver.findElement(By.cssSelector("div.Io6YTe.fontBodyMedium.kR99db.fdkmkc"));
-                    phone= phoneNumberElement.getText();
-                    System.out.println(phoneNumberElement);
-                } catch (Exception ignored) {}
-
-                // Intentar obtener el rating
-                try {
-                    WebElement ratingElement = driver.findElement(By.cssSelector("span.MW4etd"));
-                    rating = ratingElement.getText();
-                    System.out.println(ratingElement);
-                } catch (Exception ignored) {}
-
-                // Intentar obtener el número de reviews
-                try {
-                    WebElement reviewsElement = driver.findElement(By.xpath("//span[@aria-label='5,071 opiniones']"));
-                    reviews = reviewsElement.getText();
-                    System.out.println(reviewsElement);
-                } catch (Exception ignored) {}
-                // Intentar obtener el tipo de lugar (cuisine type)
-                try {
-                    WebElement cuisineTypeElement = driver.findElement(By.xpath("//button[contains(@class, 'DkEaL')]"));
-                    cuisineType = cuisineTypeElement.getText();
-                    System.out.println(cuisineTypeElement);
-                } catch (Exception ignored) {}
-
-                // Actualizar la base de datos con los nuevos datos
-                Optional<Location> optionalLocation = locationRepository.findByLocationId(locationId);
-                if (optionalLocation.isPresent()) {
-                    Location loc = optionalLocation.get();
-                    loc.setPhoneNumber(phone);
-                    loc.setRating(rating.isEmpty() ? null : Double.valueOf(rating));
-                    loc.setReviewCount(reviews.isEmpty() ? null : Integer.parseInt(reviews.replaceAll("\\D+", "")));
-                    loc.setCuisine_type(cuisineType);
-                    locationRepository.save(loc);
-                }
+                // Llamar al método para recolectar datos
+                recolectarDatos(driver);
 
             } catch (Exception e) {
-                System.out.println("Error procesando: " + dto.getLocationId() + " → " + e.getMessage());
+                System.out.println("Error procesando la ubicación con ID: " + dto.getLocationId() + " → " + e.getMessage());
             }
         }
 
         // Cerrar el driver de Edge después de procesar todas las ubicaciones
         driver.quit();
+    }
+
+    // Método para simular una interacción humana (movimiento del ratón, desplazamiento, clics aleatorios)
+    private void humanizarInteraccion(WebDriver driver) throws InterruptedException {
+        Actions actions = new Actions(driver);
+        Random rand = new Random();
+
+        // Simular un retraso aleatorio antes de empezar
+        Thread.sleep(rand.nextInt(2000) + 1000);  // Espera aleatoria entre 1 y 3 segundos
+
+        // Mover el ratón a un área aleatoria de la página
+        WebElement randomElement = driver.findElement(By.cssSelector("body"));
+        actions.moveToElement(randomElement).perform();
+        Thread.sleep(rand.nextInt(2000) + 1000);  // Espera aleatoria entre 1 y 3 segundos
+
+        // Desplazarse hacia abajo por la página
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Thread.sleep(rand.nextInt(3000) + 2000);  // Espera aleatoria entre 2 y 5 segundos
+
+        // Hacer clic en un enlace aleatorio (como parte de la interacción humana)
+        WebElement randomClickable = driver.findElement(By.cssSelector("a"));
+        actions.moveToElement(randomClickable).click().perform();
+        Thread.sleep(rand.nextInt(2000) + 1000);  // Espera aleatoria para simular un clic humano
+    }
+
+    // Método para recolectar los datos desde la página de TripAdvisor
+    private void recolectarDatos(WebDriver driver) {
+        try {
+            // Recoger el número de teléfono
+            WebElement phoneElement = driver.findElement(By.cssSelector("span.biGQs._P.XWJSj.Wb"));
+            String phone = phoneElement.getText();
+            System.out.println("Teléfono: " + phone);
+
+            // Recoger el rating
+            WebElement ratingElement = driver.findElement(By.cssSelector("div[data-automation='bubbleRatingValue']"));
+            String rating = ratingElement.getText();
+            System.out.println("Calificación: " + rating);
+
+            // Recoger la cantidad de reseñas
+            WebElement reviewsElement = driver.findElement(By.cssSelector("div[data-automation='bubbleReviewCount']"));
+            String reviews = reviewsElement.getText();
+            System.out.println("Número de reseñas: " + reviews);
+
+            // Recoger el tipo de cocina (si es un restaurante)
+            WebElement cuisineTypeElement = driver.findElement(By.cssSelector("span.biGQs._P.pZUbB.KxBGd"));
+            String cuisineType = cuisineTypeElement.getText();
+            System.out.println("Tipo de cocina: " + cuisineType);
+
+            // Optional<Location> optionalLocation = locationRepository.findByLocationId(dto.getLocationId());
+            // if (optionalLocation.isPresent()) {
+            //    Location loc = optionalLocation.get();
+            //    loc.setPhoneNumber(phone);
+            //    loc.setRating(rating.isEmpty() ? null : Double.valueOf(rating.replaceAll("[^0-9.]", "")));
+            //    loc.setReviewCount(reviews.isEmpty() ? null : Integer.parseInt(reviews.replaceAll("\\D+", "")));
+            //    loc.setCuisine_type(cuisineType);
+            //    locationRepository.save(loc);
+            // }
+
+        } catch (Exception e) {
+            System.out.println("Error al recolectar datos: " + e.getMessage());
+        }
     }
 }

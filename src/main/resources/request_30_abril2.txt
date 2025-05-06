@@ -1,0 +1,58 @@
+base_url = "https://api.content.tripadvisor.com/api/v1/location/search"
+api_key = "746F3ABE44B944CDA5DCFF366DDFD396"
+categories = ["casera", "cocteleria", "bar", "restaurante", "chocolateria", "kebab"]
+
+# Nuevas zonas, manteniendo la lógica de 3 puntos por zona y separación de ~2 km
+zonas_pobres_nuevas = {
+    "Tetuán": [
+        (40.460, -3.715),
+        (40.475, -3.730),
+        (40.450, -3.710)
+    ],
+    "La Elipa": [
+        (40.405, -3.680),
+        (40.400, -3.690),
+        (40.415, -3.685)
+    ],
+    "Aluche": [
+        (40.370, -3.762),
+        (40.365, -3.745),
+        (40.380, -3.755)
+    ],
+    "Puente de Vallecas": [
+        (40.375, -3.675),
+        (40.390, -3.660),
+        (40.365, -3.665)
+    ],
+    "Chamartín": [
+        (40.475, -3.685),
+        (40.465, -3.700),
+        (40.460, -3.690)
+    ]
+}
+
+urls_nuevas = []
+
+for zona, coords in zonas_pobres_nuevas.items():
+    for lat, lon in coords:
+        for category in categories:
+            url = (
+                f"{base_url}?key={api_key}"
+                f"&searchQuery={category}"
+                f"&category=restaurant"
+                f"&latLong={lat},{lon}"
+                f"&radius=1"
+                f"&radiusUnit=km"
+                f"&language=es"
+            )
+            urls_nuevas.append(url)
+
+# Guardar en archivo
+with open("tripadvisor_urls_zonas_pobres_nuevas.txt", "w") as f:
+    for url in urls_nuevas:
+        f.write(url + "\n")
+
+print(f"Total zonas nuevas: {len(zonas_pobres_nuevas)}")
+print(f"Radios por zona: 3")
+print(f"Categorías: {len(categories)}")
+print(f"Total URLs generadas: {len(urls_nuevas)}")

@@ -89,7 +89,7 @@ public class ApiRequestService {
 
         // Guardar el archivo combinado
         FileWriter file = new FileWriter(outputFilePath);
-        file.write(combinedResults.toString(2));  // Formato bonito
+        file.write(combinedResults.toString(2));// Formato bonito
         file.close();
         System.out.println("Archivo combinado guardado en: " + outputFilePath);
     }

@@ -1,0 +1,61 @@
+import requests
+
+base_url = "https://api.content.tripadvisor.com/api/v1/location/search"
+api_key = "746F3ABE44B944CDA5DCFF366DDFD396"
+categories = ["casera", "cocteleria", "bar", "restaurante", "chocolateria", "kebab"]
+
+# Configuración: cada zona tiene al menos 3 puntos (radios de 1 km no superpuestos)
+# Coordenadas elegidas manualmente con separación de ~2 km
+zonas_pobres = {
+    "San Blas": [
+        (40.430, -3.630),
+        (40.440, -3.650),
+        (40.425, -3.645)
+    ],
+    "Vallecas": [
+        (40.390, -3.640),
+        (40.410, -3.635),
+        (40.400, -3.620)
+    ],
+    "Carabanchel": [
+        (40.385, -3.745),
+        (40.370, -3.730),
+        (40.390, -3.720)
+    ],
+    "Usera": [
+        (40.380, -3.700),
+        (40.390, -3.690),
+        (40.370, -3.710)
+    ],
+    "Villaverde": [
+        (40.350, -3.710),
+        (40.360, -3.730),
+        (40.340, -3.690)
+    ]
+}
+
+urls = []
+
+for zona, coords in zonas_pobres.items():
+    for lat, lon in coords:
+        for category in categories:
+            url = (
+                f"{base_url}?key={api_key}"
+                f"&searchQuery={category}"
+                f"&category=restaurant"
+                f"&latLong={lat},{lon}"
+                f"&radius=1"
+                f"&radiusUnit=km"
+                f"&language=es"
+            )
+            urls.append(url)
+
+# Guardar en archivo
+with open("tripadvisor_urls_zonas_pobres.txt", "w") as f:
+    for url in urls:
+        f.write(url + "\n")
+
+print(f"Total zonas: {len(zonas_pobres)}")
+print(f"Radios por zona: 3")
+print(f"Categorías: {len(categories)}")
+print(f"Total URLs generadas: {len(urls)}")

@@ -20,11 +20,17 @@ public class JsonRefineService {
     private static final String API_PHOTOS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/photos?key=" + API_KEY + "&language=en&limit=1&offset=1&source=Expert";
     private final OkHttpClient client = new OkHttpClient();
     private final ObjectMapper objectMapper = new ObjectMapper();
-
+    //Recibe el la ruta donde esta el json general y sin campos repetidos
+    //Lo convierte en un nodo y busca extrae el location id para construir un link
+    //Con el link construido de detalles, espera la respuesta de fetchDetailsFromApi y extrae los campos indicados
+    //Para cocina extrae sus distintos valores y los guarda todos en una sola linea como string
+    //Crea el link de busqueda para fotos guarda el dato ya extraido en el metodo de fetchImageUrlFromApi
+    //Aprovecha el archivo original mapeado como nodo y agrega los nuevos campos facilmente
+    //Guarda el nuevo archivo en la misma ruta y lo llama updated_results
     public String processJson() {
         File inputFile = new File(INPUT_JSON_PATH);
         try {
-            // 1. Procesar el JSON (tu código actual)
+            // 1. Procesar el JSON
             JsonNode root = objectMapper.readTree(inputFile);
 
             for (JsonNode node : root) {
@@ -32,7 +38,7 @@ public class JsonRefineService {
                     String locationId = node.get("location_id").asText();
                     System.out.println(locationId);
 
-                    // Obtener los detalles (rating, price_level, cuisine)
+                    // Obtener los detalles (rating, phone,num_reviews, price_level, cuisine e imageUrl)
                     JsonNode apiResponse = fetchDetailsFromApi(String.format(API_DETAILS_URL, locationId));
 
                     String rating = apiResponse.has("rating") ? apiResponse.get("rating").asText() : "N/A";
@@ -85,7 +91,7 @@ public class JsonRefineService {
         }
     }
 
-    // Metodo que construye el link de solicitud HTTP para detalles de cocina, rating y precio
+    // Metodo auxiliar que devuelve una arbol con todo el contenido de detalles
     public JsonNode fetchDetailsFromApi(String url) {
         Request request = new Request.Builder().url(url).build();
         try (Response response = client.newCall(request).execute()) {
@@ -98,7 +104,7 @@ public class JsonRefineService {
         return null;
     }
 
-    // Método para hacer solicitud HTTP y extraer la URL de la imagen
+    // Método auxiliar que busca el link de imagen dentro del json que recibe y lo devuelve, de no encontrarlo se usa NA
     public String fetchImageUrlFromApi(String url) {
         Request request = new Request.Builder().url(url).build();
         try (Response response = client.newCall(request).execute()) {

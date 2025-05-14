@@ -26,16 +26,28 @@ public class MapService {
 
         for (Location loc : locations) {
             try {
-                String fullAddress = String.format("%s, %s, %s, %s",
-                        loc.getAddressString());
+                // Reemplazamos el uso de String.format con la concatenación correcta
+                // Asegúrate de que los campos street1, street2, city, country estén disponibles y sean correctos.
+                String street1 = loc.getStreet1() != null ? loc.getStreet1() : "";
+                String street2 = loc.getStreet2() != null ? loc.getStreet2() : "";
+                String city = loc.getCity() != null ? loc.getCity() : "";
+                String country = loc.getCountry() != null ? loc.getCountry() : "";
 
+                // Concatenamos los campos de la dirección para formar la dirección completa
+                String fullAddress = street1 + (street2.isEmpty() ? "" : ", " + street2)
+                        + (city.isEmpty() ? "" : ", " + city)
+                        + (country.isEmpty() ? "" : ", " + country);
+
+                // Ahora que tenemos la dirección completa, obtenemos las coordenadas
                 Optional<Coordinates> coordinates = getCoordinatesFromAddress(fullAddress);
 
                 if (coordinates.isPresent()) {
-                    loc.setLatitude(coordinates.get().latitude.toString());
-                    loc.setLongitude(coordinates.get().longitude.toString());
+                    loc.setLatitude(coordinates.get().latitude);
+                    loc.setLongitude(coordinates.get().longitude);
                     locationRepository.save(loc);
                     System.out.println("Actualizada Location: " + loc.getLocationId());
+                } else {
+                    System.err.println("No se pudo obtener coordenadas para la ubicación " + loc.getLocationId());
                 }
 
             } catch (Exception e) {
@@ -43,6 +55,7 @@ public class MapService {
             }
         }
     }
+
 
     public Optional<Coordinates> getCoordinatesFromAddress(String address) throws Exception {
         HttpClient client = HttpClient.newHttpClient();

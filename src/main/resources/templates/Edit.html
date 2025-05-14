@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Oferta</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Editar Oferta</h1>
+
+    <form th:action="@{/update}" method="post" th:object="${offer}">
+        <!-- ID oculto -->
+        <input type="hidden" th:field="*{id}" />
+        <!-- También mandamos el locationId actual -->
+        <input type="hidden" name="locationId" th:value="${offer.location.locationId}" />
+
+        <div class="form-group">
+            <label for="title">Título:</label>
+            <input type="text" th:field="*{title}" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="old_price">Precio Antiguo:</label>
+            <input type="number" th:field="*{old_price}" class="form-control" step="0.01" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="new_price">Precio Nuevo:</label>
+            <input type="number" th:field="*{new_price}" class="form-control" step="0.01" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Descripción:</label>
+            <input type="text" th:field="*{description}" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="inicioOferta">Inicio Oferta:</label>
+            <input type="date" th:field="*{inicioOferta}" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="finOferta">Fin Oferta:</label>
+            <input type="date" th:field="*{finOferta}" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Link de la imagen:</label>
+            <input type="text" th:field="*{image}" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Restaurante:</label>
+            <input type="text" class="form-control" th:value="${offer.location.name}" readonly/>
+        </div>
+
+        <button type="submit" class="btn btn-success">💾 Guardar Cambios</button>
+        <a th:href="@{/Ofertas}" class="btn btn-secondary ml-2">↩️ Cancelar</a>
+    </form>
+</div>
+
+</body>
+</html>

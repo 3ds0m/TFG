@@ -1,15 +1,18 @@
 package com.edson.gonzales.aff.Entity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Data
 @Builder
+@AllArgsConstructor
 @Entity
+@NoArgsConstructor
 @Table(name="Locations")
+@EqualsAndHashCode(exclude = "offers")
 public class Location{
     @Id
     @Column
@@ -34,9 +37,9 @@ public class Location{
     private String addressString;
     //Para Mapa
     @Column
-    private String latitude;
+    private Double latitude;
     @Column
-    private String longitude;
+    private Double longitude;
 
     //A partir de aqui es nulo en la bbdd
     @Column
@@ -51,4 +54,6 @@ public class Location{
     private String priceLevel;
     @Column
     private String Cuisine_type;
+    @OneToMany(mappedBy = "location", cascade = CascadeType.PERSIST)
+    private Set<Offer> offers = new HashSet<>();
 }

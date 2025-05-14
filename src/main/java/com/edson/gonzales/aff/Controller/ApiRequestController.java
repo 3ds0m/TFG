@@ -1,15 +1,15 @@
 package com.edson.gonzales.aff.Controller;
 
 
+import com.edson.gonzales.aff.Repository.OfferRepository;
 import com.edson.gonzales.aff.Service.ApiRequestService;
 import com.edson.gonzales.aff.Service.JsonRefineService;
 import com.edson.gonzales.aff.Service.JsonToDatabaseService;
+import com.edson.gonzales.aff.Service.MapService;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import org.springframework.web.bind.annotation.RestController;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,11 +20,11 @@ public class ApiRequestController {
     @Autowired
     private ApiRequestService apiRequestService;
     @Autowired
-    private JsonRefineService jsonRefineServiceDeprecado;
-    @Autowired
     private JsonToDatabaseService jsonToDatabaseService;
     @Autowired
     private JsonRefineService jsonRefineService;
+    @Autowired
+    private MapService mapService;
 
     @GetMapping("/Restaurantes")
     public String processAllAndRefine() {
@@ -48,12 +48,10 @@ public class ApiRequestController {
             // Paso 3: Eliminar los archivos JSON descargados (excluyendo el combinado)
             apiRequestService.deleteJsonFilesInDirectory(outputDir, "combined_results.json");
 
-            // Paso 4: Refinar el archivo combinado (agregar price_range e image)
+            // Paso 4: Refinar el archivo combinado (agregar rating,telefono,cantidad de reviews,rango de precio,tipo de cocina e imagen)
             String refineResult =jsonRefineService.processJson();
             //Si se usa este metodo se realizan hasta (21*Cant_links) llamadas a la API
 
-            // Paso 4: El resultado combinado se agrega a base de datos
-            //jsonToDatabaseService.insertJsonFileToDatabase(combinedFilePath);
             return "Proceso completado: ";
 
         } catch (IOException e) {
@@ -67,5 +65,22 @@ public class ApiRequestController {
             filePaths.add(file.getAbsolutePath());
         }
         return filePaths;
+    }
+    @GetMapping("/transfer-json")
+    public String transferJsonData() {
+        // Ruta fija del archivo JSON
+        String filePath = "C:/Users/Edson/Desktop/Aff/JSON/combined_results.json";
+
+        try {
+            jsonToDatabaseService.insertJsonFileToDatabase(filePath);
+            return "✅ Datos obtenidos y guardados correctamente desde " + filePath;
+        } catch (IOException e) {
+            return "❌ Error al transferir datos: " + e.getMessage();
+        }
+    }
+    @GetMapping("/ubicacion")
+    public String ubicacion() {
+        mapService.updateLatLonForIncompleteLocations();
+        return "✅ Datos obtenidos y guardados correctamente desde " ;
     }
 }

@@ -14,7 +14,28 @@ import java.util.Set;
 
 @Service
 public class ApiRequestService {
-    // Método para leer las URLs desde un archivo de texto
+    // Método que recibe un el path de un archivo txt con links de una api y el lugar donde guardara sus resultados
+    // Se apoya en readUrlFromFile para leer los links de un archivo txt y devuelve los links como posiciones de un List
+    // Una vez con los links, se usa el metodo de fetchandSaveJson, con los links del list se van guardando uno a uno
+    public void makeRequestsFromTxt(String inputFilePath, String outputDir) throws IOException {
+        // Crear el directorio si no existe
+        File outputDirectory = new File(outputDir);
+        if (!outputDirectory.exists()) {
+            outputDirectory.mkdirs();
+        }
+        // Leer las URLs del archivo
+        List<String> urls = readUrlsFromFile(inputFilePath);
+        // Lista de archivos JSON generados
+        List<String> jsonFiles = new ArrayList<>();
+        // Realizar las solicitudes y guardar los resultados en archivos
+        for (int i = 0; i < urls.size(); i++) {
+            String url = urls.get(i);
+            String outputFilePath = outputDir + "response_" + i + ".json";
+            fetchAndSaveJson(url, outputFilePath);
+            jsonFiles.add(outputFilePath);
+        }
+    }
+    // Método auxiliar
     public List<String> readUrlsFromFile(String filePath) throws IOException {
         List<String> urls = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(filePath));
@@ -25,8 +46,7 @@ public class ApiRequestService {
         br.close();
         return urls;
     }
-
-    // Método para realizar la solicitud HTTP GET y guardar el resultado en un archivo
+    // Método auxiliar
     public void fetchAndSaveJson(String urlString, String outputFilePath) throws IOException {
         URL url = new URL(urlString);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -55,71 +75,7 @@ public class ApiRequestService {
         System.out.println("Guardado: " + outputFilePath);
     }
 
-    // Método para combinar todos los archivos JSON en uno solo
-    public void combineJsonFiles(List<String> jsonFiles, String outputFilePath) throws IOException {
-        JSONArray combinedResults = new JSONArray();
-
-        for (String jsonFile : jsonFiles) {
-            BufferedReader reader = new BufferedReader(new FileReader(jsonFile));
-            String line;
-            StringBuilder content = new StringBuilder();
-            while ((line = reader.readLine()) != null) {
-                content.append(line);
-            }
-            reader.close();
-
-            try {
-                JSONObject jsonObject = new JSONObject(content.toString());
-
-                // Verificar si el campo "data" existe
-                if (jsonObject.has("data")) {
-                    JSONArray data = jsonObject.getJSONArray("data");
-                    for (int i = 0; i < data.length(); i++) {
-                        combinedResults.put(data.get(i));
-                    }
-                } else {
-                    // Si no existe el campo "data", agregar un mensaje de error o ignorar
-                    System.out.println("No se encontró 'data' en: " + jsonFile);
-                }
-            } catch (Exception e) {
-                // Si ocurre cualquier otro tipo de excepción, manejarla de manera adecuada
-                System.out.println("Error procesando el archivo JSON: " + jsonFile + ". Error: " + e.getMessage());
-            }
-        }
-
-        // Guardar el archivo combinado
-        FileWriter file = new FileWriter(outputFilePath);
-        file.write(combinedResults.toString(2));// Formato bonito
-        file.close();
-        System.out.println("Archivo combinado guardado en: " + outputFilePath);
-    }
-
-    // Método para hacer todas las solicitudes desde el archivo y guardar las respuestas
-    public void makeRequestsFromTxt(String inputFilePath, String outputDir) throws IOException {
-        // Crear el directorio si no existe
-        File outputDirectory = new File(outputDir);
-        if (!outputDirectory.exists()) {
-            outputDirectory.mkdirs();
-        }
-
-        // Leer las URLs del archivo
-        List<String> urls = readUrlsFromFile(inputFilePath);
-
-        // Lista de archivos JSON generados
-        List<String> jsonFiles = new ArrayList<>();
-
-        // Realizar las solicitudes y guardar los resultados en archivos
-        for (int i = 0; i < urls.size(); i++) {
-            String url = urls.get(i);
-            String outputFilePath = outputDir + "response_" + i + ".json";
-            fetchAndSaveJson(url, outputFilePath);
-            jsonFiles.add(outputFilePath);
-        }
-
-        // Combinar todos los archivos JSON en uno solo
-        String combinedFilePath = outputDir + "combined_results.json";
-        combineJsonFiles(jsonFiles, combinedFilePath);
-    }
+    //Metodo que recibe la direccion donde debe eliminar todo y ademas el archivo que no debe eliminar de alli
     public void deleteJsonFilesInDirectory(String directoryPath, String fileToExclude) {
         File directory = new File(directoryPath);
         File[] files = directory.listFiles();
@@ -137,9 +93,13 @@ public class ApiRequestService {
         }
     }
 
+    //Recibe el directorio donde estan los json totales apoyandose en un metodo que extrae los paths
+    //Utilizando el FileReader se accede al contenido de cada uno de estos y lo convierte en string
+    //Partiendo desde el string, crea un objeto de tipo jsonObject con cada archivo unico
+    //Busca el campo data de cada json para validarlo y hashea el location id para evitar repeticion
+    //Agrega los no repetidos con un put al JsonArray
+    //Crea un archivo en el outputFilePath y guarda alli el array el json final formateado para verse bien
     public void combineJsonFilesAndRemoveDuplicates(List<String> jsonFiles, String outputFilePath) throws IOException {
-        // Usamos un Set para evitar duplicados basándonos en el location_id.
-        // Para hacer esto necesitamos una forma de definir qué objeto es único.
         Set<String> uniqueLocationIds = new HashSet<>();
         JSONArray combinedResults = new JSONArray();
 

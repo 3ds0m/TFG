@@ -66,8 +66,8 @@ public class JsonToDatabaseService {
                     location.setPriceLevel(jsonObject.optString("price_level", null));
                 }
 
-                //location.setLatitude(null);
-                //location.setLongitude(null);
+                location.setLatitude(null);
+                location.setLongitude(null);
 
                 locations.add(location);
                 System.out.println("✅ Nuevo lugar agregado: " + locationId);

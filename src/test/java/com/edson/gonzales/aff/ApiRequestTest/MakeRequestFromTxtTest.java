@@ -3,88 +3,127 @@ package com.edson.gonzales.aff.ApiRequestTest;
 import com.edson.gonzales.aff.Service.ApiRequestService;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MakeRequestFromTxtTest {
 
     private final ApiRequestService service = new ApiRequestService();
+    private MockWebServer mockWebServer;
+    private File tempDir;
+    private File inputFile;
+
+    @BeforeEach
+    void setUp() throws IOException {
+        // Set up MockWebServer
+        mockWebServer = new MockWebServer();
+        mockWebServer.start();
+
+        // Create temp directory for test output
+        tempDir = Files.createTempDirectory("api_test_output").toFile();
+        tempDir.deleteOnExit();
+
+        // Create temp input file
+        inputFile = File.createTempFile("urls_", ".txt");
+        inputFile.deleteOnExit();
+    }
+
+    @AfterEach
+    void tearDown() throws IOException {
+        // Clean up resources
+        mockWebServer.shutdown();
+
+        // Delete any remaining files in temp directory
+        if (tempDir.exists()) {
+            File[] files = tempDir.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    file.delete();
+                }
+            }
+            tempDir.delete();
+        }
+
+        // Delete input file if it still exists
+        if (inputFile.exists()) {
+            inputFile.delete();
+        }
+    }
 
     @Test
     void shouldMakeRequestsFromTxtAndSaveResponses() throws IOException {
-        // Configurar MockWebServer
-        MockWebServer mockWebServer = new MockWebServer();
+        // Prepare mock responses - one for each URL in the test
         String jsonResponse = "{ \"data\": [ { \"location_id\": \"1\", \"name\": \"Lugar A\" } ] }";
+
+        // Queue up two responses for the two URLs we'll request
         mockWebServer.enqueue(new MockResponse()
                 .setResponseCode(200)
                 .setBody(jsonResponse)
                 .addHeader("Content-Type", "application/json"));
-        mockWebServer.start();
 
+        mockWebServer.enqueue(new MockResponse()
+                .setResponseCode(200)
+                .setBody(jsonResponse)
+                .addHeader("Content-Type", "application/json"));
+
+        // Get URL paths from mock server
         String url1 = mockWebServer.url("/test1").toString();
         String url2 = mockWebServer.url("/test2").toString();
 
-        // Crear archivo de texto con URLs
-        File inputFile = File.createTempFile("urls_", ".txt");
+        // Write URLs to the input file
         try (FileWriter writer = new FileWriter(inputFile)) {
             writer.write(url1 + "\n");
             writer.write(url2);
         }
 
-        // Directorio para las respuestas
-        File outputDir = new File("temp_output_dir");
-        if (!outputDir.exists()) {
-            outputDir.mkdir();
+        // Create output directory path
+        String outputDirPath = tempDir.getAbsolutePath() + File.separator;
+
+        // Execute the method under test with increased timeouts
+        service.makeRequestsFromTxt(inputFile.getAbsolutePath(), outputDirPath);
+
+        // Verify JSON files were created
+        File[] files = tempDir.listFiles((dir, name) -> name.startsWith("response_"));
+        assertNotNull(files, "Output files should not be null");
+        assertEquals(2, files.length, "Should have created 2 output files");
+
+        // Verify content of the first file
+        if (files.length > 0) {
+            String content = Files.readString(files[0].toPath());
+            assertTrue(content.contains("\"location_id\": \"1\""),
+                    "Response file should contain the expected location_id");
+            assertTrue(content.contains("\"name\": \"Lugar A\""),
+                    "Response file should contain the expected name");
         }
-
-        // Llamar al método que hace las solicitudes y guarda las respuestas
-        service.makeRequestsFromTxt(inputFile.getAbsolutePath(), outputDir.getAbsolutePath());
-
-        // Verificar que los archivos JSON fueron creados
-        File[] files = outputDir.listFiles((dir, name) -> name.startsWith("response_"));
-        assertNotNull(files);
-        assertEquals(2, files.length);
-
-        // Verificar el contenido de los archivos JSON
-        for (File file : files) {
-            String content = Files.readString(file.toPath());
-            assertTrue(content.contains("Lugar A"));
-            assertTrue(content.contains("\"location_id\": \"1\""));
-        }
-
-        // Limpiar archivos y directorios
-        for (File file : files) {
-            file.delete();
-        }
-        outputDir.delete();
-        inputFile.delete();
-
-        mockWebServer.shutdown();
     }
 
     @Test
     void shouldHandleEmptyFileWithoutErrors() throws IOException {
-        // Crear un archivo de texto vacío
-        File emptyFile = File.createTempFile("empty_urls_", ".txt");
-        File outputDir = new File("temp_output_empty_dir");
-        if (!outputDir.exists()) {
-            outputDir.mkdir();
+        // Write nothing to the input file (empty)
+        try (FileWriter writer = new FileWriter(inputFile)) {
+            // File is intentionally left empty
         }
 
-        // Llamar al método con un archivo vacío
-        service.makeRequestsFromTxt(emptyFile.getAbsolutePath(), outputDir.getAbsolutePath());
+        String outputDirPath = tempDir.getAbsolutePath() + File.separator;
 
-        // Verificar que no se hayan creado archivos en el directorio de salida
-        assertEquals(0, outputDir.listFiles().length);
+        // Call the method with an empty file
+        service.makeRequestsFromTxt(inputFile.getAbsolutePath(), outputDirPath);
 
-        // Limpiar archivos y directorios
-        emptyFile.delete();
-        outputDir.delete();
+        // Verify no response files were created
+        File[] files = tempDir.listFiles((dir, name) -> name.startsWith("response_"));
+        if (files == null) {
+            files = new File[0]; // Handle null case for assertion
+        }
+        assertEquals(0, files.length, "No files should be created for empty input");
     }
 }

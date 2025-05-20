@@ -1,11 +1,10 @@
 package com.edson.gonzales.aff.Controller;
 import com.edson.gonzales.aff.DTO.LocationDTO;
 import com.edson.gonzales.aff.DTO.OfferDTO;
-import com.edson.gonzales.aff.Entity.Location;
-import com.edson.gonzales.aff.Entity.Offer;
 import com.edson.gonzales.aff.Repository.LocationRepository;
 import com.edson.gonzales.aff.Repository.OfferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,29 +29,34 @@ public class EndpointController {
         return ResponseEntity.ok(locations);
     }
     @GetMapping("/listaofertas")
+    @Cacheable("offers")
     public List<OfferDTO> getAllLocationsofertas() {
         return offerRepository.findAll().stream()
-                .map(OfferDTO::new)  // Convierte cada Location a LocationDTO
+                .map(OfferDTO::new)
                 .collect(Collectors.toList());
     }
+
     @GetMapping("/listarestaurantes")
+    @Cacheable("locations")
     public List<LocationDTO> getAllLocations() {
         return locationRepository.finalLocations().stream()
                 .map(LocationDTO::new)
                 .collect(Collectors.toList());
     }
+
+    @GetMapping("/listalowcost")
+    @Cacheable("locations")
+    public List<LocationDTO> getLowCostLocations() {
+        return locationRepository.LowcostLocations().stream()
+                .map(LocationDTO::new)
+                .collect(Collectors.toList());
+    }
+
     //Metodo que usando el nombre del restaurant busca la entidad completa en json para mostrar
     @GetMapping("/locations/search")
     @ResponseBody
     public List<LocationDTO> searchLocationsFront(@RequestParam("query") String query) {
         System.out.println(query);
         return locationRepository.searchByNameFront(query);
-    }
-
-    @GetMapping("/listalowcost")
-    public List<LocationDTO> getLowCostLocations() {
-        return locationRepository.LowcostLocations().stream()
-                .map(LocationDTO::new)
-                .collect(Collectors.toList());
     }
 }

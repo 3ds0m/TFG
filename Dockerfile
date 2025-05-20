@@ -1,14 +1,29 @@
-# Usa una imagen base de OpenJDK
-FROM openjdk:21-jdk-slim
+FROM maven:3.9-eclipse-temurin-21-alpine AS build
 
-# Establece el directorio de trabajo dentro del contenedor
+
 WORKDIR /app
 
-# Copia el archivo .jar generado a la carpeta /app dentro del contenedor
-COPY target/*.jar /app/
 
-# Expone el puerto donde la aplicación estará disponible
-EXPOSE 9000
+COPY pom.xml .
+COPY mvnw .
+COPY .mvn .mvn
 
-# Ejecuta el archivo .jar de la aplicación
-ENTRYPOINT ["java", "-jar", "Aff-0.0.1-SNAPSHOT.jar"]
+RUN mvn dependency:go-offline -B
+
+COPY src src
+
+RUN mvn package -DskipTests
+
+FROM eclipse-temurin:21-jre-alpine
+
+WORKDIR /app
+
+COPY --from=build /app/target/*.jar app.jar
+
+# Create a non-root user to run the application
+RUN addgroup --system javauser && adduser --system --ingroup javauser javauser
+USER javauser
+
+EXPOSE 8080
+
+CMD ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar app.jar"]

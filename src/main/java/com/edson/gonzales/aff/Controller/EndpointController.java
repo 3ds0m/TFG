@@ -7,9 +7,7 @@ import com.edson.gonzales.aff.Repository.LocationRepository;
 import com.edson.gonzales.aff.Repository.OfferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,21 +29,30 @@ public class EndpointController {
         }
         return ResponseEntity.ok(locations);
     }
-    @GetMapping("/listarestaurantes")
-    public List<LocationDTO> getAllLocations() {
-        // Devuelve todas las ubicaciones mapeadas a LocationDTO
-        return locationRepository.findAll().stream()
-                .map(LocationDTO::new)  // Convierte cada Location a LocationDTO
-                .collect(Collectors.toList());
-    }
     @GetMapping("/listaofertas")
     public List<OfferDTO> getAllLocationsofertas() {
         return offerRepository.findAll().stream()
                 .map(OfferDTO::new)  // Convierte cada Location a LocationDTO
                 .collect(Collectors.toList());
     }
-    @GetMapping("/exponer")
-    public List<Location> getAllLocationsoferta() {
-        return locationRepository.findIncompleteLocations();
+    @GetMapping("/listarestaurantes")
+    public List<LocationDTO> getAllLocations() {
+        return locationRepository.finalLocations().stream()
+                .map(LocationDTO::new)
+                .collect(Collectors.toList());
+    }
+    //Metodo que usando el nombre del restaurant busca la entidad completa en json para mostrar
+    @GetMapping("/locations/search")
+    @ResponseBody
+    public List<LocationDTO> searchLocationsFront(@RequestParam("query") String query) {
+        System.out.println(query);
+        return locationRepository.searchByNameFront(query);
+    }
+
+    @GetMapping("/listalowcost")
+    public List<LocationDTO> getLowCostLocations() {
+        return locationRepository.LowcostLocations().stream()
+                .map(LocationDTO::new)
+                .collect(Collectors.toList());
     }
 }

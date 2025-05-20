@@ -66,8 +66,8 @@ public class JsonToDatabaseService {
                     location.setPriceLevel(jsonObject.optString("price_level", null));
                 }
 
-                location.setLatitude(null);
-                location.setLongitude(null);
+                //location.setLatitude(null);
+                //location.setLongitude(null);
 
                 locations.add(location);
                 System.out.println("✅ Nuevo lugar agregado: " + locationId);
@@ -75,13 +75,8 @@ public class JsonToDatabaseService {
                 System.out.println("⚠️ Lugar ya existe en la base de datos: " + locationId);
             }
         }
-
 // Solo guarda los nuevos registros
         locationRepository.saveAll(locations);
         System.out.println("✅ Datos actualizados correctamente en la base de datos.");
-
-
-        locationRepository.saveAll(locations);
-        System.out.println("✅ Datos insertados correctamente en la base de datos.");
     }
 }

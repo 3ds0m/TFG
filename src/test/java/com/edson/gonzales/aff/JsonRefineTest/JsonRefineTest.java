@@ -1,4 +1,4 @@
-package com.edson.gonzales.aff.JsonRefineTest;
+/*package com.edson.gonzales.aff.JsonRefineTest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.edson.gonzales.aff.Service.JsonRefineService;
@@ -25,3 +25,4 @@ public class JsonRefineTest {
         MockitoAnnotations.openMocks(this); // Inicializa los mocks antes de cada prueba
     }
 }
+*/

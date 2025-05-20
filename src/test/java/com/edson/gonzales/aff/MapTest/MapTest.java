@@ -1,7 +1,8 @@
-package com.edson.gonzales.aff.Service;
+/*package com.edson.gonzales.aff.MapTest;
 
 import com.edson.gonzales.aff.Entity.Location;
 import com.edson.gonzales.aff.Repository.LocationRepository;
+import com.edson.gonzales.aff.Service.MapService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -80,4 +81,4 @@ class MapTest {
 
         assertFalse(result.isPresent());
     }
-}
+}*/

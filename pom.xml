@@ -104,6 +104,11 @@
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>caffeine</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>24.6.0</version> <!-- Usa la última versión compatible -->
+        </dependency>
     </dependencies>
 
     <build>

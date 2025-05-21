@@ -37,7 +37,7 @@ public class EndpointController {
     }
 
     @GetMapping("/listarestaurantes")
-    @Cacheable("locations")
+    @Cacheable("locationsAll")
     public List<LocationDTO> getAllLocations() {
         return locationRepository.finalLocations().stream()
                 .map(LocationDTO::new)
@@ -45,7 +45,7 @@ public class EndpointController {
     }
 
     @GetMapping("/listalowcost")
-    @Cacheable("locations")
+    @Cacheable("locationsLowCost")
     public List<LocationDTO> getLowCostLocations() {
         return locationRepository.LowcostLocations().stream()
                 .map(LocationDTO::new)

@@ -18,7 +18,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/pago")
 public class PagoController {
-    @Value("${stripe.api.secret}")
+    @Value("${stripe.api}")
     private String stripeKey;
 
     @Autowired

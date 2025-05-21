@@ -19,14 +19,14 @@ import java.util.Map;
 @RequestMapping("/pago")
 public class PagoController {
     @Value("${stripe.api.secret}")
-    private String stripeSecretKey;
+    private String stripeKey;
 
     @Autowired
     private OfferRepository ofertaRepository;  // Repositorio para acceder a ofertas
 
     @PostMapping("/crear-sesion")
     public ResponseEntity<?> crearSesionDePago(@RequestBody PaymentRequest paymentRequest) {
-        Stripe.apiKey = stripeSecretKey;
+        Stripe.apiKey = stripeKey;
         try {
             Offer oferta = ofertaRepository.findById(paymentRequest.getOfferId())
                     .orElseThrow(() -> new RuntimeException("Oferta no encontrada"));

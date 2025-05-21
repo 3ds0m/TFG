@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class CacheConfig {
     @Bean
     public CacheManager cacheManager() {
-        CaffeineCacheManager cacheManager = new CaffeineCacheManager("locations", "offers");
+        CaffeineCacheManager cacheManager = new CaffeineCacheManager("locationsAll", "offers","locationsLowCost");
         cacheManager.setCaffeine(Caffeine.newBuilder()
                 .expireAfterWrite(10, TimeUnit.MINUTES)
                 .maximumSize(100));

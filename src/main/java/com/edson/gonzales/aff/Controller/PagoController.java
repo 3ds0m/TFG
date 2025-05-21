@@ -5,6 +5,7 @@ import com.edson.gonzales.aff.Repository.OfferRepository;
 import com.stripe.Stripe;
 import com.stripe.model.checkout.Session;
 import com.stripe.param.checkout.SessionCreateParams;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +18,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/pago")
 public class PagoController {
-    private String stripeSecretKey="sk_test_51RR6eVIVlXlM0oyWvmtKTNnFsu0Qu67hQKqwTG7LOXi4pGNnQlBM9TSL3CKC5aHBm1CryyLbZCT28qm6nCYTtB4L00hEcMM3ng";
+    @Value("${stripe.api.secret}")
+    private String stripeSecretKey;
 
     @Autowired
     private OfferRepository ofertaRepository;  // Repositorio para acceder a ofertas

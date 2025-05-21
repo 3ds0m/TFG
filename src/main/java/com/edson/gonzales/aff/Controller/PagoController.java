@@ -25,7 +25,6 @@ public class PagoController {
     @PostMapping("/crear-sesion")
     public ResponseEntity<?> crearSesionDePago(@RequestBody PaymentRequest paymentRequest) {
         Stripe.apiKey = stripeSecretKey;
-        System.out.println("OfferId recibido: " + paymentRequest.getOfferId());
         try {
             Offer oferta = ofertaRepository.findById(paymentRequest.getOfferId())
                     .orElseThrow(() -> new RuntimeException("Oferta no encontrada"));

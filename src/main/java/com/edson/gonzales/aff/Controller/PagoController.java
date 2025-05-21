@@ -42,8 +42,8 @@ public class PagoController {
 
             SessionCreateParams params = SessionCreateParams.builder()
                     .setMode(SessionCreateParams.Mode.PAYMENT)
-                    .setSuccessUrl("https://google.com")
-                    .setCancelUrl("https://youtube.com")
+                    .setSuccessUrl("https://edsontfg.vercel.app/Success.html")
+                    .setCancelUrl("https://edsontfg.vercel.app/Cancel.html")
                     .addLineItem(
                             SessionCreateParams.LineItem.builder()
                                     .setQuantity(1L)

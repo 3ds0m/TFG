@@ -21,7 +21,9 @@ public interface LocationRepository extends JpaRepository<Location, String> {
     @Query("SELECT l FROM Location l " +
             "WHERE l.latitude IS NOT NULL " +
             "AND l.longitude IS NOT NULL " +
-            "AND l.reviewCount IS NOT NULL ")
+            "AND l.reviewCount IS NOT NULL "+
+            "AND l.reviewCount > 4 "+
+            "AND LOWER(l.name) NOT LIKE 'hotel'")
     List<Location> finalLocations();
 
     @Query("SELECT l FROM Location l " +

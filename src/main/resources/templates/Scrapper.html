@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Scraper - Selección de Zona</title>
+
+    <!-- Leaflet CSS desde CDN confiable -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Leaflet JS desde CDN confiable -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            height: 450px;
+            width: 100%;
+            margin: 1rem 0;
+        }
+        body {
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Seleccionar zona para scraping</h2>
+
+<form id="scrapeForm" action="/scraper/start" method="post">
+    <label>API Key:</label>
+    <input type="text" name="apiKey" required><br><br>
+
+    <label>Categorías (separadas por coma):</label>
+    <input type="text" name="categories" placeholder="ej: casera, bar, kebab" required><br><br>
+
+    <label>Radio (km):</label>
+    <input type="number" id="radius" name="radiusKm" step="0.1" min="0.1" value="1"><br><br>
+
+    <div id="map"></div>
+
+    <input type="hidden" name="latStart" id="latStart">
+    <input type="hidden" name="latEnd" id="latEnd">
+    <input type="hidden" name="lonStart" id="lonStart">
+    <input type="hidden" name="lonEnd" id="lonEnd">
+    <input type="hidden" name="centerLat" id="centerLat">
+    <input type="hidden" name="centerLon" id="centerLon">
+
+    <button type="submit">Generar Links y Scrappear</button>
+</form>
+
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        let centerMarker = null;
+        let circle = null;
+
+        const map = L.map('map').setView([40.4168, -3.7038], 13); // Madrid
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        map.on('click', function (e) {
+            const lat = e.latlng.lat;
+            const lon = e.latlng.lng;
+            const radiusKm = parseFloat(document.getElementById("radius").value);
+            const radiusMeters = radiusKm * 1000;
+
+            // Limpiar marcadores anteriores
+            if (centerMarker) map.removeLayer(centerMarker);
+            if (circle) map.removeLayer(circle);
+
+            // Añadir marcador
+            centerMarker = L.marker([lat, lon]).addTo(map);
+            circle = L.circle([lat, lon], {
+                radius: radiusMeters,
+                color: 'blue',
+                fillOpacity: 0.3
+            }).addTo(map);
+
+            // Calcular bounding box
+            const latDelta = radiusKm / 111;
+            const lonDelta = radiusKm / (111 * Math.cos(lat * Math.PI / 180));
+
+            document.getElementById("latStart").value = lat - latDelta;
+            document.getElementById("latEnd").value = lat + latDelta;
+            document.getElementById("lonStart").value = lon - lonDelta;
+            document.getElementById("lonEnd").value = lon + lonDelta;
+            document.getElementById("centerLat").value = lat;
+            document.getElementById("centerLon").value = lon;
+        });
+    });
+</script>
+
+</body>
+</html>

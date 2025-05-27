@@ -67,6 +67,7 @@ public class PagoController {
             return ResponseEntity.ok(Map.of("sessionId", session.getId()));
 
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.status(500).body(Map.of("error", "Error al crear la sesión de pago: " + e.getMessage()));
         }
     }

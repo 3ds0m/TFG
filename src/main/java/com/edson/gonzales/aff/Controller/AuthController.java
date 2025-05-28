@@ -7,6 +7,7 @@ import com.edson.gonzales.aff.DTO.RegisterRequest;
 import com.edson.gonzales.aff.Entity.User;
 import com.edson.gonzales.aff.Repository.UserRepository;
 import com.edson.gonzales.aff.Service.AuthService;
+import com.edson.gonzales.aff.Service.PasswordResetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,6 +25,8 @@ public class AuthController {
     private UserRepository userRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @Autowired
+    private PasswordResetService passwordResetService;
     @GetMapping("/complete")
     public String complete() {
         return userRepository.findAll().toString();
@@ -31,7 +34,6 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<Object> login(@RequestBody LoginRequest request) {
         Optional<String> tokenOpt = authService.login(request.getUsernameOrEmail(), request.getPassword());
-        System.out.println(request.getUsernameOrEmail() + " " + request.getPassword());
         if (tokenOpt.isPresent()) {
             return ResponseEntity.ok(new LoginResponse(tokenOpt.get()));
         } else {
@@ -58,6 +60,7 @@ public class AuthController {
 
     @GetMapping("/user/favorites")
     public ResponseEntity<?> getFavorites(@RequestHeader("Authorization") String authHeader) {
+        System.out.println("Authorization: " + authHeader);
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             return ResponseEntity.status(401).body("Token no proporcionado");
         }
@@ -100,5 +103,27 @@ public class AuthController {
         newUser.setPassword(passwordEncoder.encode(request.getPassword()));
         authService.saveUser(newUser);
         return ResponseEntity.ok("Usuario creado correctamente");
+    }
+    @PostMapping("/forgot-password")
+    public ResponseEntity<String> forgotPassword(@RequestParam String email) {
+        boolean sent = passwordResetService.generateResetToken(email);
+        if (sent) {
+            return ResponseEntity.ok("Se envió un correo si el email existe.");
+        } else {
+            return ResponseEntity.ok("Se envió un correo si el email existe.");
+        }
+    }
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<String> resetPassword(
+            @RequestParam String token,
+            @RequestParam String newPassword
+    ) {
+        boolean success = passwordResetService.resetPassword(token, newPassword);
+        if (success) {
+            return ResponseEntity.ok("Contraseña restablecida con éxito.");
+        } else {
+            return ResponseEntity.badRequest().body("Token inválido o expirado.");
+        }
     }
 }

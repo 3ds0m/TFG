@@ -3,6 +3,7 @@ package com.edson.gonzales.aff.Service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import lombok.Setter;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -13,11 +14,8 @@ import java.io.IOException;
 
 @Service
 public class JsonRefineService {
-    private static final String INPUT_JSON_PATH = "C:\\Users\\Edson\\Desktop\\Aff\\JSON\\combined_results.json";
-    private static final String OUTPUT_JSON_PATH = "C:\\Users\\Edson\\Desktop\\Aff\\JSON\\updated_results.json";
-    private static final String API_KEY = "746F3ABE44B944CDA5DCFF366DDFD396";
-    private static final String API_DETAILS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/details?key=" + API_KEY + "&language=en&currency=USD";
-    private static final String API_PHOTOS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/photos?key=" + API_KEY + "&language=en&limit=1&offset=1&source=Expert";
+    @Setter
+    private String apiKey;
     private final OkHttpClient client = new OkHttpClient();
     private final ObjectMapper objectMapper = new ObjectMapper();
     //Recibe el la ruta donde esta el json general y sin campos repetidos
@@ -28,6 +26,11 @@ public class JsonRefineService {
     //Aprovecha el archivo original mapeado como nodo y agrega los nuevos campos facilmente
     //Guarda el nuevo archivo en la misma ruta y lo llama updated_results
     public String processJson() {
+        String INPUT_JSON_PATH = "./JSON/combined_results.json";
+        String OUTPUT_JSON_PATH = "./JSON/updated_results.json";
+        String API_KEY = "746F3ABE44B944CDA5DCFF366DDFD396";
+        String API_DETAILS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/details?key=" + API_KEY + "&language=en&currency=USD";
+        String API_PHOTOS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/photos?key=" + API_KEY + "&language=en&limit=1&offset=1&source=Expert";
         File inputFile = new File(INPUT_JSON_PATH);
         try {
             // 1. Procesar el JSON

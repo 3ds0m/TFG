@@ -22,7 +22,7 @@ import java.util.Optional;
 public class MapService {
     private final LocationRepository locationRepository;
     public void updateLatLonForIncompleteLocations() {
-        List<Location> locations = locationRepository.findIncompleteLocations();
+        List<Location> locations = locationRepository.findNotValidatedLocations();
 
         for (Location loc : locations) {
             try {
@@ -44,9 +44,12 @@ public class MapService {
                 if (coordinates.isPresent()) {
                     loc.setLatitude(coordinates.get().latitude);
                     loc.setLongitude(coordinates.get().longitude);
+                    loc.setGeoValidated(true);
                     locationRepository.save(loc);
                     System.out.println("Actualizada Location: " + loc.getLocationId());
                 } else {
+                    loc.setGeoValidated(true);
+                    locationRepository.save(loc);
                     System.err.println("No se pudo obtener coordenadas para la ubicación " + loc.getLocationId());
                 }
 

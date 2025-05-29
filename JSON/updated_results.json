@@ -1,0 +1,285 @@
+[ {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle Fuente de La Salud 15, 28223 Pozuelo de Alarcón España",
+    "city" : "Pozuelo de Alarcón",
+    "postalcode" : "28223",
+    "street1" : "Calle Fuente de La Salud 15",
+    "street2" : ""
+  },
+  "distance" : "1.7410306596208975",
+  "bearing" : "northwest",
+  "name" : "bar restaurante barranco",
+  "location_id" : "7159636",
+  "rating" : "3.9",
+  "phone" : "+34 913 52 86 00",
+  "num_reviews" : "70",
+  "price_level" : "$",
+  "cuisine_types" : "Spanish",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/06/c2/12/19/getlstd-property-photo_rotated_90.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle Oslo 1, 28224 Pozuelo de Alarcón España",
+    "city" : "Pozuelo de Alarcón",
+    "postalcode" : "28224",
+    "street1" : "Calle Oslo 1",
+    "street2" : ""
+  },
+  "distance" : "0.9573739941901808",
+  "bearing" : "north",
+  "name" : "Paschi Cocina Peruana y Pisco Bar",
+  "location_id" : "8358683",
+  "rating" : "4.4",
+  "phone" : "+34 912 54 20 96",
+  "num_reviews" : "271",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Peruvian, Latin, Mediterranean",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1d/d7/89/0d/terraza.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Via del Dos Castillas 23 Local 20, 28224 Pozuelo de Alarcón España",
+    "city" : "Pozuelo de Alarcón",
+    "postalcode" : "28224",
+    "street1" : "Via del Dos Castillas 23",
+    "street2" : "Local 20"
+  },
+  "distance" : "0.9592414182183067",
+  "bearing" : "north",
+  "name" : "Cavanna Tapas Lounge Bar",
+  "location_id" : "5900459",
+  "rating" : "3.6",
+  "phone" : "+34 91212121",
+  "num_reviews" : "50",
+  "price_level" : "N/A",
+  "cuisine_types" : "",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/07/c0/f4/e2/cavanna-lounge-bar.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle Atenas 2, 28224 Pozuelo de Alarcón España",
+    "city" : "Pozuelo de Alarcón",
+    "postalcode" : "28224",
+    "street1" : "Calle Atenas 2",
+    "street2" : ""
+  },
+  "distance" : "0.841873234193788",
+  "bearing" : "north",
+  "name" : "Tierra Burrito Bar",
+  "location_id" : "12579276",
+  "rating" : "3.5",
+  "phone" : "+34 910 05 37 90",
+  "num_reviews" : "33",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Fast Food, Mexican",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0f/ab/08/d9/tierra-burrito-bar.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Avenida Europa 7, 28224 Pozuelo de Alarcón España",
+    "city" : "Pozuelo de Alarcón",
+    "postalcode" : "28224",
+    "street1" : "Avenida Europa 7",
+    "street2" : ""
+  },
+  "distance" : "0.9530990047625826",
+  "bearing" : "north",
+  "name" : "La vinoteca",
+  "location_id" : "4915024",
+  "rating" : "3.8",
+  "phone" : "+34 913 51 53 59",
+  "num_reviews" : "140",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Bar, Mediterranean, Spanish, Pub, Wine Bar",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0b/91/1a/23/photo2jpg.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Av. De Europa, 22, Local 2, 28224 Pozuelo de Alarcón España",
+    "city" : "Pozuelo de Alarcón",
+    "postalcode" : "28224",
+    "street1" : "Av. De Europa, 22, Local 2",
+    "street2" : ""
+  },
+  "distance" : "1.1575762666070597",
+  "bearing" : "north",
+  "name" : "Bar de carnes (By Bistec)",
+  "location_id" : "20077452",
+  "rating" : "4.3",
+  "phone" : "+34 911 13 58 69",
+  "num_reviews" : "27",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Steakhouse, Barbecue, Argentinean, Grill",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/a7/e3/8f/carne-100-argentina.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "P° Del Club Deportivo, 1. Ed. 17. Parque Empresarial La Finca Parque Empresarial La Finca, 28223 Pozuelo de Alarcón España",
+    "city" : "Pozuelo de Alarcón",
+    "postalcode" : "28223",
+    "street1" : "P° Del Club Deportivo, 1. Ed. 17. Parque Empresarial La Finca",
+    "street2" : "Parque Empresarial La Finca"
+  },
+  "distance" : "0.5904974060710625",
+  "bearing" : "southwest",
+  "name" : "AC Hotel La Finca",
+  "location_id" : "601448",
+  "rating" : "3.8",
+  "phone" : "18446310595",
+  "num_reviews" : "245",
+  "price_level" : "$$$",
+  "cuisine_types" : "",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/1c/b8/5a/0f/img-20210308-wa0000-largejpg.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Paseo de la Puerta del Angel 1, 28011 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28011",
+    "street1" : "Paseo de la Puerta del Angel 1",
+    "street2" : ""
+  },
+  "distance" : "2.1470955184301266",
+  "bearing" : "east",
+  "name" : "Casa de Campo",
+  "location_id" : "244592",
+  "rating" : "4.2",
+  "phone" : "+34 915 29 10 28",
+  "num_reviews" : "564",
+  "price_level" : "N/A",
+  "cuisine_types" : "",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/01/47/23/0d/casa-de-campo.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Plaza de Jose Luis Berlanga, Pozuelo de Alarcón España",
+    "city" : "Pozuelo de Alarcón",
+    "street1" : "Plaza de Jose Luis Berlanga",
+    "street2" : ""
+  },
+  "distance" : "0.5753148845950341",
+  "bearing" : "northeast",
+  "name" : "Las Brasas",
+  "location_id" : "4427058",
+  "rating" : "2.8",
+  "phone" : "N/A",
+  "num_reviews" : "24",
+  "price_level" : "N/A",
+  "cuisine_types" : "Spanish, Grill",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/18/9e/e3/b4/las-brasas.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle Illescas 57, 28024 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28024",
+    "street1" : "Calle Illescas 57",
+    "street2" : ""
+  },
+  "distance" : "2.432311431254947",
+  "bearing" : "southeast",
+  "name" : "Bar San Matias",
+  "location_id" : "4882942",
+  "rating" : "4.2",
+  "phone" : "+34 915 18 10 73",
+  "num_reviews" : "79",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0b/4f/32/25/img-20160509-143145-largejpg.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Calle Cebreros 101, 28011 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28011",
+    "street1" : "Calle Cebreros 101",
+    "street2" : ""
+  },
+  "distance" : "2.3443020589045753",
+  "bearing" : "southeast",
+  "name" : "Cocodrilo Rock Bar",
+  "location_id" : "10343934",
+  "rating" : "4.7",
+  "phone" : "+34 916 14 43 98",
+  "num_reviews" : "12",
+  "price_level" : "N/A",
+  "cuisine_types" : "",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/0b/82/bf/e2/cocodrilo-rock-bar.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Paseo de Extremadura 147, 28011 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28011",
+    "street1" : "Paseo de Extremadura 147",
+    "street2" : ""
+  },
+  "distance" : "2.5216528384746972",
+  "bearing" : "east",
+  "name" : "Bar La Gloria",
+  "location_id" : "8428506",
+  "rating" : "4.2",
+  "phone" : "+34 914 64 30 86",
+  "num_reviews" : "11",
+  "price_level" : "$",
+  "cuisine_types" : "Bar, Cafe, Pub, Spanish",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-w/27/a5/28/af/caption.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Av. de Europa, 22, 28224 Pozuelo de Alarcón España",
+    "city" : "Pozuelo de Alarcón",
+    "postalcode" : "28224",
+    "street1" : "Av. de Europa, 22",
+    "street2" : ""
+  },
+  "distance" : "0.8936920246337716",
+  "bearing" : "north",
+  "name" : "Tasty Poke Bar",
+  "location_id" : "15234332",
+  "rating" : "3.3",
+  "phone" : "+34 917 31 60 89",
+  "num_reviews" : "14",
+  "price_level" : "$",
+  "cuisine_types" : "Japanese, Asian, Hawaiian",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-w/15/90/a9/8d/img-20181009-144525-largejpg.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Vía de las Dos Castillas, 23, 28223 Pozuelo de Alarcón España",
+    "city" : "Pozuelo de Alarcón",
+    "postalcode" : "28223",
+    "street1" : "Vía de las Dos Castillas, 23",
+    "street2" : ""
+  },
+  "distance" : "0.4709981411660795",
+  "bearing" : "north",
+  "name" : "Cavanna",
+  "location_id" : "11921815",
+  "rating" : "4.1",
+  "phone" : "+34 917 15 76 96",
+  "num_reviews" : "56",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Bar, International, Mediterranean, Spanish, Pub",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/28/1c/d1/d1/caption.jpg"
+}, {
+  "address_obj" : {
+    "country" : "España",
+    "address_string" : "Avenida Europa 27, 28023 Madrid España",
+    "city" : "Madrid",
+    "postalcode" : "28023",
+    "street1" : "Avenida Europa 27",
+    "street2" : ""
+  },
+  "distance" : "1.0408084492615652",
+  "bearing" : "north",
+  "name" : "Casa Carmo",
+  "location_id" : "6681809",
+  "rating" : "3.9",
+  "phone" : "N/A",
+  "num_reviews" : "54",
+  "price_level" : "$$ - $$$",
+  "cuisine_types" : "Spanish, Mediterranean",
+  "image" : "https://media-cdn.tripadvisor.com/media/photo-o/06/48/64/24/desde-fuera.jpg"
+} ]

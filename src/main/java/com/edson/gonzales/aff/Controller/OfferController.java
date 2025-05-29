@@ -73,7 +73,7 @@ public class OfferController {
 
         Location location = locationRepository.findById(locationId).orElse(null);
         if (location != null) {
-            offer.setLocation(location); // ✅ ya no es una lista
+            offer.setLocation(location); // ya no es una lista
             offer.setLocationName(location.getName());
             location.getOffers().add(offer);
         }

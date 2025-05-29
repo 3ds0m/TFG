@@ -2,64 +2,458 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Editar Oferta</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Oferta - Madrid Local</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --primary-hover: #ff5252;
+            --secondary: #4ecdc4;
+            --accent: #45b7d1;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --radius: 15px;
+            --gradient-1: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            --gradient-2: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .logo a {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 25px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+
+        /* Hero Section */
+        .edit-hero {
+            padding: 4rem 0;
+            background: var(--gradient-1);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .edit-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .edit-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Form Styles */
+        .edit-form {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .form-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-section h4 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--white);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+            background-color: var(--white);
+        }
+
+        .form-control[readonly] {
+            background-color: var(--bg-light);
+            border-color: #dee2e6;
+        }
+
+        /* Button Styles */
+        .btn-success {
+            background: var(--gradient-2);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            background: var(--gradient-2);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-light);
+            border-color: var(--text-light);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Input Groups */
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            z-index: 5;
+        }
+
+        .form-control.with-icon {
+            padding-left: 3rem;
+        }
+
+        /* Price Display */
+        .price-preview {
+            background: var(--bg-light);
+            border-radius: var(--radius);
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .new-price {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .discount-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .edit-hero {
+                padding: 2rem 0;
+            }
+
+            .edit-form {
+                margin-top: -1rem;
+                padding: 1.5rem;
+            }
+
+            .btn-success,
+            .btn-secondary {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
 </head>
 <body>
+<!-- HEADER -->
+<header class="sticky-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg py-2">
+            <div class="logo navbar-brand">
+                <h1><i class="fas fa-utensils"></i>Madrid<span>Local</span></h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/Ofertas">Ofertas</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
 
-<div class="container mt-5">
-    <h1 class="mb-4">Editar Oferta</h1>
-
-    <form th:action="@{/update}" method="post" th:object="${offer}">
-        <!-- ID oculto -->
-        <input type="hidden" th:field="*{id}" />
-        <!-- También mandamos el locationId actual -->
-        <input type="hidden" name="locationId" th:value="${offer.location.locationId}" />
-
-        <div class="form-group">
-            <label for="title">Título:</label>
-            <input type="text" th:field="*{title}" class="form-control" required/>
+<!-- HERO SECTION -->
+<section class="edit-hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12 text-center">
+                <h1 class="display-5 fw-bold mb-3">
+                    <i class="fas fa-edit me-3"></i>Editar Oferta
+                </h1>
+                <p class="lead">Modifica los detalles de tu oferta especial</p>
+            </div>
         </div>
+    </div>
+</section>
 
-        <div class="form-group">
-            <label for="old_price">Precio Antiguo:</label>
-            <input type="number" th:field="*{old_price}" class="form-control" step="0.01" required/>
-        </div>
+<!-- FORMULARIO DE EDICIÓN -->
+<section class="py-5">
+    <div class="container">
+        <form th:action="@{/update}" method="post" th:object="${offer}" class="edit-form fade-in-up">
+            <!-- ID oculto -->
+            <input type="hidden" th:field="*{id}" />
+            <input type="hidden" name="locationId" th:value="${offer.location.locationId}" />
 
-        <div class="form-group">
-            <label for="new_price">Precio Nuevo:</label>
-            <input type="number" th:field="*{new_price}" class="form-control" step="0.01" required/>
-        </div>
+            <div class="form-section">
+                <h4><i class="fas fa-info-circle"></i> Información Básica</h4>
 
-        <div class="form-group">
-            <label for="description">Descripción:</label>
-            <input type="text" th:field="*{description}" class="form-control"/>
-        </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label for="title" class="form-label">
+                            <i class="fas fa-tag"></i> Título de la Oferta
+                        </label>
+                        <input type="text" th:field="*{title}" class="form-control" id="title" required placeholder="Ej: Menú del día especial"/>
+                    </div>
+                </div>
 
-        <div class="form-group">
-            <label for="inicioOferta">Inicio Oferta:</label>
-            <input type="date" th:field="*{inicioOferta}" class="form-control"/>
-        </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="old_price" class="form-label">
+                            <i class="fas fa-euro-sign"></i> Precio Original
+                        </label>
+                        <input type="number" th:field="*{old_price}" class="form-control" id="old_price" step="0.01" required placeholder="0.00"/>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="new_price" class="form-label">
+                            <i class="fas fa-euro-sign"></i> Precio con Descuento
+                        </label>
+                        <input type="number" th:field="*{new_price}" class="form-control" id="new_price" step="0.01" required placeholder="0.00"/>
+                    </div>
+                </div>
 
-        <div class="form-group">
-            <label for="finOferta">Fin Oferta:</label>
-            <input type="date" th:field="*{finOferta}" class="form-control"/>
-        </div>
+                <div class="price-preview" id="pricePreview" style="display: none;">
+                    <span class="old-price" id="oldPriceDisplay">€0.00</span>
+                    <span class="new-price" id="newPriceDisplay">€0.00</span>
+                    <span class="discount-badge" id="discountDisplay">0% OFF</span>
+                </div>
+            </div>
 
-        <div class="form-group">
-            <label for="image">Link de la imagen:</label>
-            <input type="text" th:field="*{image}" class="form-control"/>
-        </div>
+            <div class="form-section">
+                <h4><i class="fas fa-align-left"></i> Descripción</h4>
+                <div class="mb-3">
+                    <label for="description" class="form-label">
+                        <i class="fas fa-file-alt"></i> Descripción de la Oferta
+                    </label>
+                    <textarea th:field="*{description}" class="form-control" id="description" rows="3" placeholder="Describe los detalles de tu oferta..."></textarea>
+                </div>
+            </div>
 
-        <div class="form-group">
-            <label for="locationName">Restaurante:</label>
-            <input type="text" class="form-control" th:value="${offer.location.name}" readonly/>
-        </div>
+            <div class="form-section">
+                <h4><i class="fas fa-calendar-alt"></i> Período de Validez</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="inicioOferta" class="form-label">
+                            <i class="fas fa-play"></i> Fecha de Inicio
+                        </label>
+                        <input type="date" th:field="*{inicioOferta}" class="form-control" id="inicioOferta"/>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="finOferta" class="form-label">
+                            <i class="fas fa-stop"></i> Fecha de Fin
+                        </label>
+                        <input type="date" th:field="*{finOferta}" class="form-control" id="finOferta"/>
+                    </div>
+                </div>
+            </div>
 
-        <button type="submit" class="btn btn-success">💾 Guardar Cambios</button>
-        <a th:href="@{/Ofertas}" class="btn btn-secondary ml-2">↩️ Cancelar</a>
-    </form>
-</div>
+            <div class="form-section">
+                <h4><i class="fas fa-image"></i> Imagen y Ubicación</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="image" class="form-label">
+                            <i class="fas fa-link"></i> URL de la Imagen
+                        </label>
+                        <input type="text" th:field="*{image}" class="form-control" id="image" placeholder="https://ejemplo.com/imagen.jpg"/>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="locationName" class="form-label">
+                            <i class="fas fa-map-marker-alt"></i> Restaurante
+                        </label>
+                        <input type="text" class="form-control" th:value="${offer.location.name}" id="locationName" readonly/>
+                    </div>
+                </div>
+            </div>
 
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-success btn-lg me-3">
+                    <i class="fas fa-save"></i> Guardar Cambios
+                </button>
+                <a th:href="@{/Ofertas}" class="btn btn-secondary btn-lg">
+                    <i class="fas fa-times"></i> Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Calcular y mostrar preview de precios
+    function updatePricePreview() {
+        const oldPrice = parseFloat(document.getElementById('old_price').value) || 0;
+        const newPrice = parseFloat(document.getElementById('new_price').value) || 0;
+
+        if (oldPrice > 0 && newPrice > 0) {
+            const discount = Math.round(((oldPrice - newPrice) / oldPrice) * 100);
+
+            document.getElementById('oldPriceDisplay').textContent = `€${oldPrice.toFixed(2)}`;
+            document.getElementById('newPriceDisplay').textContent = `€${newPrice.toFixed(2)}`;
+            document.getElementById('discountDisplay').textContent = `${discount}% OFF`;
+            document.getElementById('pricePreview').style.display = 'block';
+        } else {
+            document.getElementById('pricePreview').style.display = 'none';
+        }
+    }
+
+    // Event listeners para actualizar preview
+    document.getElementById('old_price').addEventListener('input', updatePricePreview);
+    document.getElementById('new_price').addEventListener('input', updatePricePreview);
+
+    // Inicializar preview al cargar la página
+    document.addEventListener('DOMContentLoaded', updatePricePreview);
+</script>
 </body>
 </html>

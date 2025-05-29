@@ -1,0 +1,9 @@
+https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=bar&category=restaurant&latLong=40.42311505107053,-3.7932597969011743&radius=0.4&radiusUnit=km&language=es
+https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=bar&category=restaurant&latLong=40.42311505107053,-3.788525911929142&radius=0.4&radiusUnit=km&language=es
+https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=bar&category=restaurant&latLong=40.42311505107053,-3.7837920269571095&radius=0.4&radiusUnit=km&language=es
+https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=bar&category=restaurant&latLong=40.42671865467413,-3.7932597969011743&radius=0.4&radiusUnit=km&language=es
+https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=bar&category=restaurant&latLong=40.42671865467413,-3.788525911929142&radius=0.4&radiusUnit=km&language=es
+https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=bar&category=restaurant&latLong=40.42671865467413,-3.7837920269571095&radius=0.4&radiusUnit=km&language=es
+https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=bar&category=restaurant&latLong=40.430322258277734,-3.7932597969011743&radius=0.4&radiusUnit=km&language=es
+https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=bar&category=restaurant&latLong=40.430322258277734,-3.788525911929142&radius=0.4&radiusUnit=km&language=es
+https://api.content.tripadvisor.com/api/v1/location/search?key=746F3ABE44B944CDA5DCFF366DDFD396&searchQuery=bar&category=restaurant&latLong=40.430322258277734,-3.7837920269571095&radius=0.4&radiusUnit=km&language=es

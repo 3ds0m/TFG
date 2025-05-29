@@ -56,4 +56,6 @@ public class Location{
     private String Cuisine_type;
     @OneToMany(mappedBy = "location", cascade = CascadeType.PERSIST)
     private Set<Offer> offers = new HashSet<>();
+    @Column
+    private Boolean geoValidated;
 }

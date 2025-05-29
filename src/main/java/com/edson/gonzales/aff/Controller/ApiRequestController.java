@@ -1,14 +1,11 @@
 package com.edson.gonzales.aff.Controller;
-
-
-import com.edson.gonzales.aff.Repository.OfferRepository;
 import com.edson.gonzales.aff.Service.ApiRequestService;
 import com.edson.gonzales.aff.Service.JsonRefineService;
 import com.edson.gonzales.aff.Service.JsonToDatabaseService;
 import com.edson.gonzales.aff.Service.MapService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.io.File;
 import java.io.IOException;
@@ -27,11 +24,11 @@ public class ApiRequestController {
     private MapService mapService;
 
     @GetMapping("/Restaurantes")
-    public String processAllAndRefine() {
+    public String processAllAndRefine(@RequestParam("apiKey") String apiKey) {
         try {
             // Rutas necesarias
-            String inputFilePath = "src/main/resources/requesto.txt";
-            String outputDir = "C:/Users/Edson/Desktop/Aff/JSON/";
+            String inputFilePath = "./Requests/request.txt";
+            String outputDir = "./JSON/";
             String combinedFilePath = outputDir + "combined_results.json";
 
             // Paso 1: Descargar los JSONs y guardarlos
@@ -47,6 +44,7 @@ public class ApiRequestController {
 
             // Paso 3: Eliminar los archivos JSON descargados (excluyendo el combinado)
             apiRequestService.deleteJsonFilesInDirectory(outputDir, "combined_results.json");
+            jsonRefineService.setApiKey(apiKey);
 
             // Paso 4: Refinar el archivo combinado (agregar rating,telefono,cantidad de reviews,rango de precio,tipo de cocina e imagen)
             String refineResult =jsonRefineService.processJson();
@@ -69,11 +67,11 @@ public class ApiRequestController {
     @GetMapping("/transfer-json")
     public String transferJsonData() {
         // Ruta fija del archivo JSON
-        String filePath = "C:/Users/Edson/Desktop/Aff/JSON/combined_results.json";
+        String filePath = "./JSON/updated_results.json";
 
         try {
             jsonToDatabaseService.insertJsonFileToDatabase(filePath);
-            return "✅ Datos obtenidos y guardados correctamente desde " + filePath;
+            return "✅ Datos transferidos y guardados correctamente en la base de datos";
         } catch (IOException e) {
             return "❌ Error al transferir datos: " + e.getMessage();
         }
@@ -81,6 +79,6 @@ public class ApiRequestController {
     @GetMapping("/ubicacion")
     public String ubicacion() {
         mapService.updateLatLonForIncompleteLocations();
-        return "✅ Datos obtenidos y guardados correctamente desde " ;
+        return "✅ Ubicaciones de los restaurantes actualizada correctamente" ;
     }
 }

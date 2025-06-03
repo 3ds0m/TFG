@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Restaurantes - Madrid Local</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --primary-hover: #ff5252;
+            --secondary: #4ecdc4;
+            --accent: #45b7d1;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --radius: 15px;
+            --gradient-1: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            --gradient-2: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .logo a {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 25px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+
+        /* Hero Section */
+        .locations-hero {
+            padding: 4rem 0;
+            background: var(--gradient-1);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .locations-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .locations-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .filter-section h4 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--white);
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+            background-color: var(--white);
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: var(--gradient-1);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            background: var(--gradient-1);
+        }
+
+        .btn-secondary {
+            background: var(--gradient-2);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: var(--transition);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            background: var(--gradient-2);
+            color: white;
+        }
+
+        .btn-sm {
+            padding: 0.4rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            border: none;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-success {
+            background: var(--success);
+            border: none;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-warning {
+            background: var(--warning);
+            border: none;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Table Styles */
+        .table-container {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .table {
+            margin: 0;
+        }
+
+        .table thead th {
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .table tbody td {
+            padding: 1rem;
+            vertical-align: middle;
+            text-align: center;
+            border-color: #f1f3f4;
+        }
+
+        .table tbody tr:hover {
+            background-color: rgba(255, 107, 107, 0.05);
+        }
+
+        .editable {
+            background-color: rgba(78, 205, 196, 0.1) !important;
+        }
+
+        .editable input {
+            width: 100%;
+            border: 2px solid var(--secondary);
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .restaurant-image {
+            max-width: 80px;
+            max-height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            transition: var(--transition);
+        }
+
+        .restaurant-image:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow);
+        }
+
+        /* Action Buttons */
+        .btn-group {
+            gap: 0.5rem;
+        }
+
+        .btn-group .btn {
+            border-radius: 20px;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .locations-hero {
+                padding: 2rem 0;
+            }
+
+            .filter-section {
+                margin-top: -1rem;
+                padding: 1.5rem;
+            }
+
+            .table-container {
+                overflow-x: auto;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn-group .btn {
+                width: 100%;
+                margin-bottom: 0.25rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+<!-- HEADER -->
+<header class="sticky-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg py-2">
+            <div class="logo navbar-brand">
+                <h1><i class="fas fa-utensils"></i><a href="Scrapper">Madrid<span>Local</span></a></h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Scrapper">Data Finder</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Ofertas">Ofertas</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Restaurantes</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="locations-hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12 text-center">
+                <h1 class="display-4 fw-bold mb-3">
+                    <i class="fas fa-utensils me-3"></i>Lista de Restaurantes
+                </h1>
+                <p class="lead">Administra y edita la información de todos los restaurantes</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FILTROS Y BÚSQUEDA -->
+<section class="py-5">
+    <div class="container">
+        <div class="filter-section fade-in-up">
+            <h4><i class="fas fa-filter"></i> Filtros y Búsqueda</h4>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label for="searchName" class="form-label">
+                        <i class="fas fa-search"></i> Buscar por nombre
+                    </label>
+                    <input id="searchName" class="form-control" placeholder="Buscar por nombre..." />
+                </div>
+                <div class="col-md-3">
+                    <label for="filterCity" class="form-label">
+                        <i class="fas fa-city"></i> Ciudad
+                    </label>
+                    <select id="filterCity" class="form-select">
+                        <option value="">Todas las ciudades</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="filterCuisine" class="form-label">
+                        <i class="fas fa-utensils"></i> Tipo de cocina
+                    </label>
+                    <select id="filterCuisine" class="form-select">
+                        <option value="">Todos los tipos de cocina</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="sortBy" class="form-label">
+                        <i class="fas fa-sort"></i> Ordenar por
+                    </label>
+                    <select id="sortBy" class="form-select">
+                        <option value="">Ordenar por</option>
+                        <option value="rating">Rating</option>
+                        <option value="name">Nombre</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <button id="applyFilters" class="btn btn-primary me-2">
+                    <i class="fas fa-filter"></i> Aplicar filtros
+                </button>
+                <button id="resetFilters" class="btn btn-secondary">
+                    <i class="fas fa-undo"></i> Resetear filtros
+                </button>
+            </div>
+        </div>
+
+        <!-- TABLA DE RESTAURANTES -->
+        <div class="table-container">
+            <table id="restaurantTable" class="table table-hover">
+                <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Nombre</th>
+                    <th><i class="fas fa-image"></i> Imagen</th>
+                    <th><i class="fas fa-utensils"></i> Tipo de Cocina</th>
+                    <th><i class="fas fa-euro-sign"></i> Precio</th>
+                    <th><i class="fas fa-phone"></i> Teléfono</th>
+                    <th><i class="fas fa-star"></i> Rating</th>
+                    <th><i class="fas fa-city"></i> Ciudad</th>
+                    <th><i class="fas fa-cogs"></i> Acciones</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    let restaurantes = []; // Aquí se cargan todos los restaurantes desde backend
+    let filteredRestaurantes = [];
+
+    // Cargar datos iniciales
+    async function loadRestaurants() {
+        const res = await fetch('/listarestaurantes');
+        restaurantes = await res.json();
+        filteredRestaurantes = restaurantes;
+        populateFilters();
+        renderTable();
+    }
+
+    // Rellenar filtros de ciudad y tipo cocina
+    function populateFilters() {
+        const cities = [...new Set(restaurantes.map(r => r.city).filter(c => c))].sort();
+        const cuisines = [...new Set(restaurantes.map(r => r.cuisine_type).filter(c => c))].sort();
+
+        const citySelect = document.getElementById('filterCity');
+        cities.forEach(city => {
+            const opt = document.createElement('option');
+            opt.value = city;
+            opt.textContent = city;
+            citySelect.appendChild(opt);
+        });
+
+        const cuisineSelect = document.getElementById('filterCuisine');
+        cuisines.forEach(cuisine => {
+            const opt = document.createElement('option');
+            opt.value = cuisine;
+            opt.textContent = cuisine;
+            cuisineSelect.appendChild(opt);
+        });
+    }
+
+    // Aplicar filtros y orden
+    function applyFilters() {
+        const nameQuery = document.getElementById('searchName').value.toLowerCase();
+        const cityFilter = document.getElementById('filterCity').value;
+        const cuisineFilter = document.getElementById('filterCuisine').value;
+        const sortBy = document.getElementById('sortBy').value;
+
+        filteredRestaurantes = restaurantes.filter(r =>
+            (!nameQuery || r.name.toLowerCase().includes(nameQuery)) &&
+            (!cityFilter || r.city === cityFilter) &&
+            (!cuisineFilter || r.cuisine_type === cuisineFilter)
+        );
+
+        if (sortBy === 'rating') {
+            filteredRestaurantes.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+        } else if (sortBy === 'name') {
+            filteredRestaurantes.sort((a, b) => a.name.localeCompare(b.name));
+        }
+
+        renderTable();
+    }
+
+    // Resetear filtros
+    function resetFilters() {
+        document.getElementById('searchName').value = '';
+        document.getElementById('filterCity').value = '';
+        document.getElementById('filterCuisine').value = '';
+        document.getElementById('sortBy').value = '';
+        filteredRestaurantes = restaurantes;
+        renderTable();
+    }
+
+    // Renderizar tabla
+    function renderTable() {
+        const tbody = document.querySelector('#restaurantTable tbody');
+        tbody.innerHTML = '';
+
+        filteredRestaurantes.forEach(r => {
+            const tr = document.createElement('tr');
+
+            // Nombre editable
+            const tdName = document.createElement('td');
+            tdName.textContent = r.name || '';
+            tdName.classList.add('name');
+            tr.appendChild(tdName);
+
+            // Imagen: mostrar imagen o vacio si no hay
+            const tdImage = document.createElement('td');
+            tdImage.classList.add('image');
+            if (r.image) {
+                const img = document.createElement('img');
+                img.src = r.image;
+                img.alt = r.name;
+                img.className = 'restaurant-image';
+                tdImage.appendChild(img);
+            }
+            tr.appendChild(tdImage);
+
+            // Tipo cocina editable
+            const tdCuisine = document.createElement('td');
+            tdCuisine.textContent = r.cuisine_type || '';
+            tdCuisine.classList.add('cuisine_type');
+            tr.appendChild(tdCuisine);
+
+            // PriceLevel editable
+            const tdPrice = document.createElement('td');
+            tdPrice.textContent = r.priceLevel || '';
+            tdPrice.classList.add('priceLevel');
+            tr.appendChild(tdPrice);
+
+            // Phone editable
+            const tdPhone = document.createElement('td');
+            tdPhone.textContent = r.phoneNumber || '';
+            tdPhone.classList.add('phoneNumber');
+            tr.appendChild(tdPhone);
+
+            // Rating no editable
+            const tdRating = document.createElement('td');
+            tdRating.innerHTML = (r.rating !== null && r.rating !== undefined) ?
+                `<span class="badge bg-warning text-dark"><i class="fas fa-star"></i> ${r.rating.toFixed(1)}</span>` :
+                '<span class="text-muted">Sin rating</span>';
+            tr.appendChild(tdRating);
+
+            // City no editable
+            const tdCity = document.createElement('td');
+            tdCity.innerHTML = r.city ? `<span class="badge bg-info">${r.city}</span>` : '<span class="text-muted">Sin ciudad</span>';
+            tr.appendChild(tdCity);
+
+            // Acciones
+            const tdActions = document.createElement('td');
+
+            // Botón Editar
+            const btnEdit = document.createElement('button');
+            btnEdit.innerHTML = '<i class="fas fa-edit"></i> Editar';
+            btnEdit.className = 'btn btn-primary btn-sm';
+            btnEdit.onclick = () => toggleEdit(tr, r);
+            tdActions.appendChild(btnEdit);
+
+            // Botón Guardar
+            const btnSave = document.createElement('button');
+            btnSave.innerHTML = '<i class="fas fa-save"></i> Guardar';
+            btnSave.className = 'btn btn-success btn-sm';
+            btnSave.style.display = 'none';
+            btnSave.onclick = () => saveChanges(tr, r);
+            tdActions.appendChild(btnSave);
+
+            // Botón Cancelar
+            const btnCancel = document.createElement('button');
+            btnCancel.innerHTML = '<i class="fas fa-times"></i> Cancelar';
+            btnCancel.className = 'btn btn-warning btn-sm';
+            btnCancel.style.display = 'none';
+            btnCancel.onclick = () => cancelEdit(tr, r);
+            tdActions.appendChild(btnCancel);
+
+            // Botón Eliminar
+            const btnDelete = document.createElement('button');
+            btnDelete.innerHTML = '<i class="fas fa-trash"></i> Eliminar';
+            btnDelete.className = 'btn btn-danger btn-sm';
+            btnDelete.onclick = () => deleteRestaurant(r.locationId);
+            tdActions.appendChild(btnDelete);
+
+            tr.appendChild(tdActions);
+            tbody.appendChild(tr);
+        });
+    }
+
+    function toggleEdit(row, restaurant) {
+        // Cambiar las celdas editables a inputs
+        ['name', 'priceLevel', 'phoneNumber', 'cuisine_type'].forEach(field => {
+            const cell = row.querySelector(`td.${field}`);
+            if (cell) {
+                const value = cell.textContent;
+                cell.innerHTML = `<input type="text" value="${value}" />`;
+                cell.classList.add('editable');
+            }
+        });
+
+        // Imagen: mostrar input con link en vez de imagen
+        const tdImage = row.querySelector('td.image');
+        if (tdImage) {
+            const currentUrl = restaurant.image || '';
+            tdImage.innerHTML = `<input type="text" value="${currentUrl}" placeholder="URL de la imagen" />`;
+            tdImage.classList.add('editable');
+        }
+
+        // Mostrar/Ocultar botones
+        const buttons = row.querySelectorAll('button');
+        buttons[0].style.display = 'none'; // Editar
+        buttons[1].style.display = 'inline-block'; // Guardar
+        buttons[2].style.display = 'inline-block'; // Cancelar
+        buttons[3].style.display = 'none'; // Eliminar
+    }
+
+    function cancelEdit(row, restaurant) {
+        // Revertir inputs a texto
+        ['name', 'priceLevel', 'phoneNumber', 'cuisine_type'].forEach(field => {
+            const cell = row.querySelector(`td.${field}`);
+            if (cell) {
+                const input = cell.querySelector('input');
+                if (input) {
+                    cell.textContent = input.defaultValue;
+                    cell.classList.remove('editable');
+                }
+            }
+        });
+
+        // Imagen: volver a mostrar imagen
+        const tdImage = row.querySelector('td.image');
+        if (tdImage) {
+            const input = tdImage.querySelector('input');
+            if (input) {
+                tdImage.classList.remove('editable');
+                tdImage.innerHTML = '';
+                if (restaurant.image) {
+                    const img = document.createElement('img');
+                    img.src = restaurant.image;
+                    img.alt = restaurant.name;
+                    img.className = 'restaurant-image';
+                    tdImage.appendChild(img);
+                }
+            }
+        }
+
+        // Mostrar/Ocultar botones
+        const buttons = row.querySelectorAll('button');
+        buttons[0].style.display = 'inline-block'; // Editar
+        buttons[1].style.display = 'none'; // Guardar
+        buttons[2].style.display = 'none'; // Cancelar
+        buttons[3].style.display = 'inline-block'; // Eliminar
+    }
+
+    async function saveChanges(row, restaurant) {
+        // Obtener valores nuevos
+        const newName = row.querySelector('td.name input').value.trim();
+        const newPrice = row.querySelector('td.priceLevel input').value.trim();
+        const newPhone = row.querySelector('td.phoneNumber input').value.trim();
+        const newCuisine = row.querySelector('td.cuisine_type input').value.trim();
+        const newImage = row.querySelector('td.image input').value.trim();
+
+        // Validar mínimo nombre
+        if (!newName) {
+            alert('El nombre no puede estar vacío.');
+            return;
+        }
+
+        // Construir objeto para enviar
+        const updatedLocation = {
+            ...restaurant,
+            name: newName,
+            priceLevel: newPrice,
+            phoneNumber: newPhone,
+            cuisine_type: newCuisine,
+            image: newImage
+        };
+
+        try {
+            const response = await fetch(`/locations/${restaurant.locationId}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updatedLocation)
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al guardar cambios');
+            }
+
+            // Actualizar localmente
+            restaurant.name = newName;
+            restaurant.priceLevel = newPrice;
+            restaurant.phoneNumber = newPhone;
+            restaurant.cuisine_type = newCuisine;
+            restaurant.image = newImage;
+
+            // Revertir inputs a texto
+            ['name', 'priceLevel', 'phoneNumber', 'cuisine_type'].forEach(field => {
+                const cell = row.querySelector(`td.${field}`);
+                if (cell) {
+                    cell.textContent = updatedLocation[field] || '';
+                    cell.classList.remove('editable');
+                }
+            });
+
+            // Imagen: mostrar imagen actualizada
+            const tdImage = row.querySelector('td.image');
+            tdImage.classList.remove('editable');
+            tdImage.innerHTML = '';
+            if (newImage) {
+                const img = document.createElement('img');
+                img.src = newImage;
+                img.alt = newName;
+                img.className = 'restaurant-image';
+                tdImage.appendChild(img);
+            }
+
+            // Botones mostrar/ocultar
+            const buttons = row.querySelectorAll('button');
+            buttons[0].style.display = 'inline-block'; // Editar
+            buttons[1].style.display = 'none'; // Guardar
+            buttons[2].style.display = 'none'; // Cancelar
+            buttons[3].style.display = 'inline-block'; // Eliminar
+
+        } catch (err) {
+            alert('Error al guardar: ' + err.message);
+        }
+    }
+
+    async function deleteRestaurant(id) {
+        if (!confirm('¿Seguro que quieres eliminar este restaurante?')) return;
+
+        try {
+            const res = await fetch(`/locations/${id}`, { method: 'DELETE' });
+            if (!res.ok) throw new Error('Error eliminando restaurante');
+
+            restaurantes = restaurantes.filter(r => r.locationId !== id);
+            filteredRestaurantes = filteredRestaurantes.filter(r => r.locationId !== id);
+            renderTable();
+
+        } catch (err) {
+            alert('Error al eliminar: ' + err.message);
+        }
+    }
+
+    // Eventos filtros y búsqueda
+    document.getElementById('searchName').addEventListener('input', applyFilters);
+    document.getElementById('filterCity').addEventListener('change', applyFilters);
+    document.getElementById('filterCuisine').addEventListener('change', applyFilters);
+    document.getElementById('sortBy').addEventListener('change', applyFilters);
+    document.getElementById('applyFilters').addEventListener('click', applyFilters);
+    document.getElementById('resetFilters').addEventListener('click', resetFilters);
+
+    loadRestaurants();
+</script>
+</body>
+</html>

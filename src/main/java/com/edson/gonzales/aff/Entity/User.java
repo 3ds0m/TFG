@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,7 +23,7 @@ public class User{
     private String username;
 
     @Column(unique = true, nullable = false)
-    private String email;  // <--- Aquí el correo
+    private String email;
 
     @Column(nullable = false)
     private String password;
@@ -37,9 +36,5 @@ public class User{
     )
     @Builder.Default
     private Set<Location> favorites = new HashSet<>();
-
-    private String resetToken;
-
-    private LocalDateTime resetTokenExpiry;
 }
 

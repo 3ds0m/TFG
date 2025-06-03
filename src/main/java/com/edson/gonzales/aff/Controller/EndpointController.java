@@ -1,12 +1,13 @@
 package com.edson.gonzales.aff.Controller;
 import com.edson.gonzales.aff.DTO.LocationDTO;
-import com.edson.gonzales.aff.DTO.OfferDTO;
+import com.edson.gonzales.aff.Entity.Location;
 import com.edson.gonzales.aff.Repository.LocationRepository;
 import com.edson.gonzales.aff.Repository.OfferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,13 +28,6 @@ public class EndpointController {
             return ResponseEntity.status(404).body(null);  // No se encontraron datos
         }
         return ResponseEntity.ok(locations);
-    }
-    @GetMapping("/listaofertas")
-    @Cacheable("offers")
-    public List<OfferDTO> getAllLocationsofertas() {
-        return offerRepository.findAll().stream()
-                .map(OfferDTO::new)
-                .collect(Collectors.toList());
     }
 
     @GetMapping("/listarestaurantes")
@@ -58,5 +52,28 @@ public class EndpointController {
     public List<LocationDTO> searchLocationsFront(@RequestParam("query") String query) {
         System.out.println(query);
         return locationRepository.searchByNameFront(query);
+    }
+
+    @DeleteMapping("/locations/{id}")
+    public ResponseEntity<Void> deleteLocation(@PathVariable("id") String id) {
+        if (locationRepository.existsById(id)) {
+            locationRepository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @PutMapping("/locations/{id}")
+    public ResponseEntity<Location> updateLocation(@PathVariable("id") String id, @RequestBody Location updatedLocation) {
+        return locationRepository.findById(id)
+                .map(location -> {
+                    updatedLocation.setLocationId(id);
+                    return ResponseEntity.ok(locationRepository.save(updatedLocation));
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+    @GetMapping("/Location")
+    public ModelAndView Locationsweb(){
+        return new ModelAndView("Location.html");
     }
 }

@@ -1,11 +1,13 @@
 package com.edson.gonzales.aff.Controller;
 
 import com.edson.gonzales.aff.DTO.LocationDTO;
+import com.edson.gonzales.aff.DTO.OfferDTO;
 import com.edson.gonzales.aff.Entity.Location;
 import com.edson.gonzales.aff.Entity.Offer;
 import com.edson.gonzales.aff.Repository.LocationRepository;
 import com.edson.gonzales.aff.Repository.OfferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -29,6 +32,13 @@ public class OfferController {
         model.addAttribute("offer", new Offer());
         model.addAttribute("locations", locationRepository.findAll());
         return "Ofertas";
+    }
+    @GetMapping("/listaofertas")
+    @Cacheable("offers")
+    public List<OfferDTO> getAllLocationsofertas() {
+        return offerRepository.findAll().stream()
+                .map(OfferDTO::new)
+                .collect(Collectors.toList());
     }
 
     @PostMapping("/delete/{id}")

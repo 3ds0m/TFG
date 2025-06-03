@@ -13,22 +13,22 @@ import java.io.File;
 import java.io.IOException;
 
 @Service
-public class JsonRefineService {
-    @Setter
-    private String apiKey;
-    private final OkHttpClient client = new OkHttpClient();
-    private final ObjectMapper objectMapper = new ObjectMapper();
-    //Recibe el la ruta donde esta el json general y sin campos repetidos
+public class JsonRefineService {//Recibe el la ruta donde esta el json general y sin campos repetidos
     //Lo convierte en un nodo y busca extrae el location id para construir un link
     //Con el link construido de detalles, espera la respuesta de fetchDetailsFromApi y extrae los campos indicados
     //Para cocina extrae sus distintos valores y los guarda todos en una sola linea como string
     //Crea el link de busqueda para fotos guarda el dato ya extraido en el metodo de fetchImageUrlFromApi
     //Aprovecha el archivo original mapeado como nodo y agrega los nuevos campos facilmente
     //Guarda el nuevo archivo en la misma ruta y lo llama updated_results
+    @Setter
+    private String apiKey;
+    private final OkHttpClient client = new OkHttpClient();
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
     public String processJson() {
         String INPUT_JSON_PATH = "./JSON/combined_results.json";
         String OUTPUT_JSON_PATH = "./JSON/updated_results.json";
-        String API_KEY = "746F3ABE44B944CDA5DCFF366DDFD396";
+        String API_KEY = apiKey;
         String API_DETAILS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/details?key=" + API_KEY + "&language=en&currency=USD";
         String API_PHOTOS_URL = "https://api.content.tripadvisor.com/api/v1/location/%s/photos?key=" + API_KEY + "&language=en&limit=1&offset=1&source=Expert";
         File inputFile = new File(INPUT_JSON_PATH);

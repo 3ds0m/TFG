@@ -40,8 +40,6 @@ public class Location{
     private Double latitude;
     @Column
     private Double longitude;
-
-    //A partir de aqui es nulo en la bbdd
     @Column
     private String phoneNumber;
     @Column

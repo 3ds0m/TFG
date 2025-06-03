@@ -1,5 +1,6 @@
 package com.edson.gonzales.aff.Controller;
 import com.edson.gonzales.aff.DTO.LocationDTO;
+import com.edson.gonzales.aff.DTO.OfferDTO;
 import com.edson.gonzales.aff.Entity.Location;
 import com.edson.gonzales.aff.Repository.LocationRepository;
 import com.edson.gonzales.aff.Repository.OfferRepository;
@@ -37,7 +38,13 @@ public class EndpointController {
                 .map(LocationDTO::new)
                 .collect(Collectors.toList());
     }
-
+    @GetMapping("/listaofertas")
+    @Cacheable("offers")
+    public List<OfferDTO> getAllLocationsofertas() {
+        return offerRepository.findAll().stream()
+                .map(OfferDTO::new)
+                .collect(Collectors.toList());
+    }
     @GetMapping("/listalowcost")
     @Cacheable("locationsLowCost")
     public List<LocationDTO> getLowCostLocations() {

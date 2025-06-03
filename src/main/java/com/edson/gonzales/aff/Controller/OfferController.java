@@ -33,13 +33,6 @@ public class OfferController {
         model.addAttribute("locations", locationRepository.findAll());
         return "Ofertas";
     }
-    @GetMapping("/listaofertas")
-    @Cacheable("offers")
-    public List<OfferDTO> getAllLocationsofertas() {
-        return offerRepository.findAll().stream()
-                .map(OfferDTO::new)
-                .collect(Collectors.toList());
-    }
 
     @PostMapping("/delete/{id}")
     public String deleteOffer(@PathVariable Long id) {

@@ -51,8 +51,8 @@ public class ScrapperRestController {
         System.out.println("Links generados y guardados: " + urls.size());
         return urls;
     }
-    @GetMapping("/Scrapper")
+    @GetMapping("/")
     public ModelAndView scrapperPage() {
-        return new ModelAndView("Scrapper.html");
+        return new ModelAndView("DataFinder.html");
     }
 }

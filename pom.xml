@@ -65,6 +65,7 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
+
         <!--Dependencia que se utiliza para conversion entre archivos java y json automaticamente-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -82,12 +83,14 @@
             <artifactId>okhttp</artifactId>
             <version>4.9.3</version>
         </dependency>
-        <!--Dependecia para SQL-->
+
+        <!--Dependecia para POSTGRESQL-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.7.1</version> <!-- Usa la última versión compatible -->
+            <version>42.7.1</version>
         </dependency>
+
         <!--Dependencia para test unitario de FecthAndSaveJson-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>

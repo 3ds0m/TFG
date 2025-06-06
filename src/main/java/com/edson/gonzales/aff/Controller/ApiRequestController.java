@@ -82,18 +82,21 @@ public class ApiRequestController {
         return "✅ Ubicaciones de los restaurantes actualizada correctamente" ;
     }
 
-    @GetMapping("/list-files")
-    public String listFiles() {
+    @GetMapping("/project-status")
+    public String projectStatus() {
         StringBuilder sb = new StringBuilder();
-        String baseDir = System.getProperty("user.dir"); // directorio base de la app
+        String baseDir = System.getProperty("user.dir");
 
-        sb.append("Base directory: ").append(baseDir).append("\n\n");
+        sb.append("=== Estructura completa del proyecto desde: ").append(baseDir).append(" ===\n\n");
 
-        // Directorios a revisar
-        String[] dirs = {"Requests", "JSON"};
+        File base = new File(baseDir);
+        listDirectoryRecursively(base, sb, 0);
 
-        for (String dirName : dirs) {
-            sb.append("Contenido del directorio '").append(dirName).append("':\n");
+        sb.append("\n=== Verificación detallada de carpetas clave ===\n\n");
+
+        String[] importantDirs = {"Requests", "JSON"};
+        for (String dirName : importantDirs) {
+            sb.append("Directorio '").append(dirName).append("':\n");
             File dir = new File(baseDir, dirName);
 
             if (!dir.exists()) {
@@ -125,5 +128,35 @@ public class ApiRequestController {
         }
 
         return sb.toString();
+    }
+
+    private void listDirectoryRecursively(File dir, StringBuilder sb, int indent) {
+        if (!dir.exists()) {
+            sb.append(getIndent(indent)).append("-> No existe: ").append(dir.getName()).append("\n");
+            return;
+        }
+        if (!dir.canRead()) {
+            sb.append(getIndent(indent)).append("-> Sin permiso lectura: ").append(dir.getName()).append("\n");
+            return;
+        }
+        if (dir.isDirectory()) {
+            sb.append(getIndent(indent)).append("[DIR] ").append(dir.getName()).append("\n");
+            File[] files = dir.listFiles();
+            if (files == null || files.length == 0) {
+                sb.append(getIndent(indent + 1)).append("(vacío)\n");
+                return;
+            }
+            for (File f : files) {
+                listDirectoryRecursively(f, sb, indent + 1);
+            }
+        } else if (dir.isFile()) {
+            sb.append(getIndent(indent)).append("[FILE] ").append(dir.getName()).append("\n");
+        } else {
+            sb.append(getIndent(indent)).append("[OTRO] ").append(dir.getName()).append("\n");
+        }
+    }
+
+    private String getIndent(int indent) {
+        return "  ".repeat(Math.max(0, indent));
     }
 }

@@ -22,6 +22,8 @@ COPY --from=build /app/target/*.jar app.jar
 
 # Create a non-root user to run the application
 RUN addgroup --system javauser && adduser --system --ingroup javauser javauser
+
+RUN chown -R javauser:javauser /app
 USER javauser
 
 EXPOSE 8080

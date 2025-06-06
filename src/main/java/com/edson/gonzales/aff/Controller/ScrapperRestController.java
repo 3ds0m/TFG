@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,6 +21,7 @@ public class ScrapperRestController {
 
     @PostMapping("/scraper/start")
     public List<String> startScraping(@RequestBody ScrapperRequest request) {
+        ensureRequiredDirectories();
         List<String> urls = new ArrayList<>();
 
         String[] categories = request.getCategories().split(",");
@@ -54,5 +56,20 @@ public class ScrapperRestController {
     @GetMapping("/")
     public ModelAndView scrapperPage() {
         return new ModelAndView("DataFinder.html");
+    }
+
+    private void ensureRequiredDirectories() {
+        String[] requiredDirs = { "./Requests", "./JSON" };
+        for (String path : requiredDirs) {
+            File dir = new File(path);
+            if (!dir.exists()) {
+                boolean created = dir.mkdirs();
+                if (!created) {
+                    System.err.println("No se pudo crear la carpeta: " + dir.getAbsolutePath());
+                } else {
+                    System.out.println("Carpeta creada: " + dir.getAbsolutePath());
+                }
+            }
+        }
     }
 }

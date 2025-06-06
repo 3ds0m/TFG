@@ -63,7 +63,8 @@ public class EndpointController {
 
     @DeleteMapping("/locations/{id}")
     public ResponseEntity<Void> deleteLocation(@PathVariable("id") String id) {
-        if (locationRepository.existsById(id)) {
+        System.out.println(id);
+        if (locationRepository.existsByLocationId(id)) {
             locationRepository.deleteById(id);
             return ResponseEntity.noContent().build();
         } else {

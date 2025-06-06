@@ -81,4 +81,49 @@ public class ApiRequestController {
         mapService.updateLatLonForIncompleteLocations();
         return "✅ Ubicaciones de los restaurantes actualizada correctamente" ;
     }
+
+    @GetMapping("/list-files")
+    public String listFiles() {
+        StringBuilder sb = new StringBuilder();
+        String baseDir = System.getProperty("user.dir"); // directorio base de la app
+
+        sb.append("Base directory: ").append(baseDir).append("\n\n");
+
+        // Directorios a revisar
+        String[] dirs = {"Requests", "JSON"};
+
+        for (String dirName : dirs) {
+            sb.append("Contenido del directorio '").append(dirName).append("':\n");
+            File dir = new File(baseDir, dirName);
+
+            if (!dir.exists()) {
+                sb.append("  -> No existe el directorio\n\n");
+                continue;
+            }
+            if (!dir.isDirectory()) {
+                sb.append("  -> No es un directorio válido\n\n");
+                continue;
+            }
+            if (!dir.canRead()) {
+                sb.append("  -> No se tienen permisos para leer el directorio\n\n");
+                continue;
+            }
+
+            File[] files = dir.listFiles();
+            if (files == null || files.length == 0) {
+                sb.append("  -> El directorio está vacío\n\n");
+                continue;
+            }
+
+            for (File f : files) {
+                sb.append("  - ").append(f.getName());
+                if (f.isDirectory()) sb.append(" [DIRECTORIO]");
+                else sb.append(" [ARCHIVO]");
+                sb.append("\n");
+            }
+            sb.append("\n");
+        }
+
+        return sb.toString();
+    }
 }

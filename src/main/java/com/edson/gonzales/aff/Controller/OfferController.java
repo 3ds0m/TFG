@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -33,7 +34,6 @@ public class OfferController {
         model.addAttribute("locations", locationRepository.findAll());
         return "Ofertas";
     }
-
     @PostMapping("/delete/{id}")
     public String deleteOffer(@PathVariable Long id) {
         Optional<Offer> optionalOffer = offerRepository.findById(id);

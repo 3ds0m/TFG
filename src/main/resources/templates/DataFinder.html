@@ -423,6 +423,11 @@
             <!-- Mapa -->
             <div class="form-section">
                 <h4><i class="fas fa-globe"></i> Selección de Zona</h4>
+                <h5><i for="stepFactor" class="form-label"></i>Ingresa Dirección, Ciudad, País (Opcional)</h5>
+                <div class="input-group mb-3">
+                    <input type="text" id="addressInput" class="form-control" placeholder="Escribe una dirección o lugar" />
+                    <button class="btn btn-primary" id="searchAddressBtn" type="button">Buscar</button>
+                </div>
                 <div id="map"></div>
             </div>
 
@@ -680,6 +685,27 @@
                 .finally(() => {
                     setButtonsDisabled(false);
                 });
+        });
+        document.getElementById('searchAddressBtn').addEventListener('click', function () {
+            const address = document.getElementById('addressInput').value.trim();
+            if (!address) {
+                alert('Por favor ingresa una dirección');
+                return;
+            }
+            // Consulta Nominatim (geocodificador de OpenStreetMap)
+            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`)
+                .then(res => res.json())
+                .then(results => {
+                    if (results.length === 0) {
+                        alert('Dirección no encontrada');
+                        return;
+                    }
+                    const result = results[0];
+                    const lat = parseFloat(result.lat);
+                    const lon = parseFloat(result.lon);
+                    map.setView([lat, lon], 15); // Centra mapa y hace zoom
+                })
+                .catch(() => alert('Error buscando la dirección'));
         });
     });
 </script>

@@ -586,9 +586,14 @@
     });
 
     function validateForm() {
+        const imageUrl = document.getElementById('image').value;
         const locationId = hiddenInput.value;
         if (!locationId || locationId === "undefined" || isNaN(locationId)) {
             alert("Por favor, selecciona un restaurante de la lista antes de guardar la oferta.");
+            return false;
+        }
+        if (imageUrl.length > 255) {
+            alert("La URL de la imagen es demasiado larga. Por favor, usa una URL más corta (máximo 255 caracteres).");
             return false;
         }
         return true;

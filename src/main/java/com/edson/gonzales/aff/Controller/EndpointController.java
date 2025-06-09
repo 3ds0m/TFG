@@ -52,7 +52,7 @@ public class EndpointController {
     @Cacheable("offers")
     public List<OfferDTO> getActiveOffers() {
         LocalDate today = LocalDate.now();
-        List<Offer> activeOffers = offerRepository.findByFinOfertaGreaterThanEqual(today);
+        List<Offer> activeOffers = offerRepository.findByFinOfertaAfterOrEquals(today);
         return activeOffers.stream()
                 .map(OfferDTO::new)
                 .collect(Collectors.toList());

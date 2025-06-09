@@ -448,7 +448,6 @@
                 <button id="resetFilters" class="btn btn-secondary">
                     <i class="fas fa-undo"></i> Resetear filtros
                 </button>
-                <button id="btnAll" class="btn btn-primary me-2">Mostrar Restaurantes aptos</button>
             </div>
         </div>
 
@@ -483,11 +482,11 @@
 
     // Crear botones para cambiar endpoint y recargar
     const btnAll = document.createElement('button');
-    btnAll.textContent = 'Mostrar Todos';
+    btnAll.textContent = 'Mostrar Todos los Restaurantes';
     btnAll.className = 'btn btn-primary me-2';
 
     const btnIncomplete = document.createElement('button');
-    btnIncomplete.textContent = 'Mostrar Incompletos';
+    btnIncomplete.textContent = 'Mostrar Restaurantes Incompletos';
     btnIncomplete.className = 'btn btn-secondary';
 
     // Agregarlos al DOM (por ejemplo dentro del contenedor de filtros)

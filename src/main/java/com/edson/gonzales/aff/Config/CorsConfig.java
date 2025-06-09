@@ -18,12 +18,11 @@ public class CorsConfig {
 
         config.setAllowedOrigins(Arrays.asList("http://127.0.0.1:5500","https://edsontfg.vercel.app")); // Vercel https://edsontfg.vercel.app
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        // GET para obtener, POST para pago
         config.setAllowCredentials(true);
         config.setAllowedHeaders(Arrays.asList("*")); // Permitir todos los headers necesarios
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", config); // Aplica a toda la API
+        source.registerCorsConfiguration("/**", config);
 
         return new CorsFilter(source);
     }

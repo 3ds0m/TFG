@@ -23,6 +23,14 @@ public interface LocationRepository extends JpaRepository<Location, String> {
     List<Location> finalLocations();
 
     @Query("SELECT l FROM Location l " +
+            "WHERE l.latitude IS NULL " +
+            "OR l.longitude IS NULL " +
+            "OR l.reviewCount IS NULL " +
+            "OR l.reviewCount <= 4 " +
+            "OR LOWER(l.name) LIKE 'hotel'")
+    List<Location> findIncompleteLocations();
+
+    @Query("SELECT l FROM Location l " +
             "WHERE l.latitude IS NOT NULL " +
             "AND l.longitude IS NOT NULL " +
             "AND l.reviewCount IS NOT NULL " +

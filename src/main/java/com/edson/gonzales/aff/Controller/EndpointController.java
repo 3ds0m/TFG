@@ -38,6 +38,14 @@ public class EndpointController {
                 .map(LocationDTO::new)
                 .collect(Collectors.toList());
     }
+    @Cacheable("badLocations")
+        @GetMapping("/listarlugaresincompletos")
+    public List<LocationDTO> getIncompleteLocations() {
+        return locationRepository.findIncompleteLocations().stream()
+                .map(LocationDTO::new)
+                .collect(Collectors.toList());
+    }
+
     @GetMapping("/listaofertas")
     @Cacheable("offers")
     public List<OfferDTO> getAllLocationsofertas() {
